@@ -37,8 +37,8 @@ public class PersistenceConfiguration {
         JpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
         Map<String, String> propMap = new HashMap<>();
 
-        propMap.put("hibernate.dialect","org.hibernate.dialect.MySQL5Dialect");
-        propMap.put("hibernate.hbm2ddl.auto","update");
+        propMap.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+        propMap.put("hibernate.hbm2ddl.auto", environment.getProperty("hibernate.hbm2ddl.auto"));
         entityManager.setDataSource(this.getDataSource());
         entityManager.setJpaPropertyMap(propMap);
         entityManager.setPackagesToScan("assignment1.entities");
@@ -59,7 +59,7 @@ public class PersistenceConfiguration {
     }
 
     @Bean
-    public PlatformTransactionManager transactionManager(EntityManagerFactory emf){
+    public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(emf);
 
@@ -67,7 +67,7 @@ public class PersistenceConfiguration {
     }
 
     @Bean
-    public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
+    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 }
