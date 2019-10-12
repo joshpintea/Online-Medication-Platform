@@ -28,5 +28,8 @@ HELP.md
 ### VS Code ###
 .vscode/
 
-
-/reports/
+entities/target/*
+endpoints/target/*
+core/target/*
+app/target/*
+target/*
