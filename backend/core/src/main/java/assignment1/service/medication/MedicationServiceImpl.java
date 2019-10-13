@@ -1,4 +1,4 @@
-package assignment1.service.patient.medication;
+package assignment1.service.medication;
 
 import org.springframework.stereotype.Service;
 

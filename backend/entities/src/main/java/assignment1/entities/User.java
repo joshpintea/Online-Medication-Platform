@@ -5,7 +5,7 @@ import java.sql.Date;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class User extends BaseEntity {
+public class User extends BaseEntity {
 
     @Column(name = "username")
     private String username;

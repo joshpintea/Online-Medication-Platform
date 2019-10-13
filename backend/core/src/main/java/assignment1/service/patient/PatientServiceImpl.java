@@ -1,4 +1,4 @@
-package assignment1.service.patient.patient;
+package assignment1.service.patient;
 
 import org.springframework.stereotype.Service;
 
