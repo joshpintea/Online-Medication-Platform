@@ -5,7 +5,7 @@ import assignment1.entities.MedicationPlan;
 
 import java.util.stream.Collectors;
 
-public class MedicationMapper {
+public class MedicationPlanMapper {
 
     public static MedicationPlan convertToEntity(MedicationPlanDto medicationPlanDto) {
         MedicationPlan medicationPlan = new MedicationPlan();

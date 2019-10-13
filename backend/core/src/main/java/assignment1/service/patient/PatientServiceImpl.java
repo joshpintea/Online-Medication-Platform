@@ -1,6 +1,8 @@
 package assignment1.service.patient;
 
+import assignment1.dto.MedicationPlanDto;
 import assignment1.dto.PatientDto;
+import assignment1.dto.mapper.MedicationPlanMapper;
 import assignment1.dto.mapper.PatientMapper;
 import assignment1.entities.Patient;
 import assignment1.exception.ObjectNotFound;
@@ -51,5 +53,17 @@ public class PatientServiceImpl implements PatientService, CrudService<PatientDt
         Patient patient = PatientMapper.convertToEntity(obj);
 
         return PatientMapper.convertToDto(this.patientRepository.save(patient));
+    }
+
+    @Override
+    public List<MedicationPlanDto> getMedicationsPlanByPatient(Long id) throws ObjectNotFound {
+        Patient patient = this.patientRepository.getOne(id);
+        if (patient == null) {
+            throw new ObjectNotFound("Patient not found");
+        }
+
+        return patient.getMedicationPlans().stream()
+                .map(MedicationPlanMapper::convertToDto)
+                .collect(Collectors.toList());
     }
 }
