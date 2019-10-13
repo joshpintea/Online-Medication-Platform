@@ -1,6 +1,9 @@
 package assignment1.service.user;
 
+import assignment1.dto.UserDto;
+import assignment1.dto.mapper.UserMapper;
 import assignment1.entities.User;
+import assignment1.exception.NotLoggedUser;
 import assignment1.repository.UserRepository;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
@@ -21,7 +24,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getLoggedUser() {
+    public UserDto getLoggedUser() throws NotLoggedUser {
         User user = null;
         SecurityContext contextHolder = SecurityContextHolder.getContext();
         Authentication authentication = contextHolder.getAuthentication();
@@ -30,6 +33,9 @@ public class UserServiceImpl implements UserService {
             user = this.userRepository.getUserByUsername(authentication.getName());
         }
 
-        return user;
+        if (user == null) {
+            throw new NotLoggedUser();
+        }
+        return UserMapper.convertToDto(user);
     }
 }

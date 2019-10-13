@@ -17,7 +17,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        System.out.println(UserRole.ROLE_DOCTOR.name());
         http
                 .anonymous().and()
                 .authorizeRequests()

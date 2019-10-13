@@ -1,23 +1,39 @@
 package assignment1.controller;
 
-import assignment1.entities.Doctor;
-import assignment1.service.doctor.DoctorService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import assignment1.dto.DoctorDto;
+import assignment1.exception.ObjectNotFound;
+import assignment1.service.CrudService;
+import assignment1.util.EndpointsUtil;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
-@RequestMapping(value = "/test")
+@RequestMapping(value = EndpointsUtil.DOCTOR)
 public class DoctorController {
-    private DoctorService doctorService;
+    private CrudService<DoctorDto> doctorService;
 
-    public DoctorController(DoctorService doctorService) {
+    public DoctorController(CrudService<DoctorDto> doctorService) {
         this.doctorService = doctorService;
     }
 
+    @GetMapping
+    public List<DoctorDto> getAll() {
+        return this.doctorService.getAll();
+    }
+
+    @GetMapping(value = "/{id}")
+    public DoctorDto getOne(@PathVariable("id") Long id) throws ObjectNotFound {
+        return this.doctorService.getOne(id);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public void delete(@PathVariable("id") Long id) throws ObjectNotFound {
+        this.doctorService.delete(id);
+    }
+
     @PostMapping
-    public Doctor test() {
-        System.out.println("hello");
-        return null;
+    public DoctorDto save(@RequestBody DoctorDto doctorDto) {
+        return this.doctorService.save(doctorDto);
     }
 }
