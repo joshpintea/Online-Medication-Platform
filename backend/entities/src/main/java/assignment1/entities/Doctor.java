@@ -13,18 +13,18 @@ public class Doctor extends User {
     private List<MedicationPlan> medicationPlans = new ArrayList<>();
 
     public Doctor() {
-        this.role = UserRole.DOCTOR;
+        this.role = UserRole.ROLE_DOCTOR;
     }
 
     public Doctor(Long id, String username, String gender, String address, String name, Date birthDate) {
         super(id, username, gender, address, name, birthDate);
-        this.role = UserRole.DOCTOR;
+        this.role = UserRole.ROLE_DOCTOR;
     }
 
     public Doctor(Long id, String username, String gender, String address, String name, Date birthDate, List<MedicationPlan> medicationPlans) {
         super(id, username, gender, address, name, birthDate);
         this.medicationPlans = medicationPlans;
-        this.role = UserRole.DOCTOR;
+        this.role = UserRole.ROLE_DOCTOR;
     }
 
     public List<MedicationPlan> getMedicationPlans() {

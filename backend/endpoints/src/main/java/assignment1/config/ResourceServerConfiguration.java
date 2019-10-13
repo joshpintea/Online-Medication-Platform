@@ -1,5 +1,6 @@
 package assignment1.config;
 
+import assignment1.entities.UserRole;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -16,9 +17,11 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
+        System.out.println(UserRole.ROLE_DOCTOR.name());
         http
                 .anonymous().and()
                 .authorizeRequests()
+                .antMatchers("/test").hasRole(UserRole.ROLE_DOCTOR.toString().substring(5))
                 .antMatchers("/**").permitAll()
                 .and().csrf().disable();
     }

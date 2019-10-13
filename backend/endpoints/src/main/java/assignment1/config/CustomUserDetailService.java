@@ -26,13 +26,13 @@ public class CustomUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         assignment1.entities.User user = userService.getUserAfterUsername(username);
-//        System.out.println(user.getUsername());
         if(user == null){
             throw new UsernameNotFoundException("Username not found");
         }
 
         List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
         grantedAuthorities.add(new SimpleGrantedAuthority(user.getRole().toString()));
+
         return new User(user.getUsername(),user.getPassword(),grantedAuthorities);
     }
 

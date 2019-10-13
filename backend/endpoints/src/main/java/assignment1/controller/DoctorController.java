@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.sql.Date;
-
 @RestController
 @RequestMapping(value = "/test")
 public class DoctorController {
@@ -19,13 +17,7 @@ public class DoctorController {
 
     @PostMapping
     public Doctor test() {
-        Doctor doctor = new Doctor();
-        doctor.setUsername("josh");
-        doctor.setPassword("josh");
-        doctor.setAddress("Cluj");
-        doctor.setBirthDate(new Date(1546344));
-        doctor.setGender("M");
-        doctor.setName("Pintea Josh");
-        return this.doctorService.create(doctor);
+        System.out.println("hello");
+        return null;
     }
 }

@@ -1,7 +1,7 @@
 package assignment1.entities;
 
 public enum UserRole {
-    DOCTOR,
-    CAREGIVER,
-    PATIENT
+    ROLE_DOCTOR,
+    ROLE_CAREGIVER,
+    ROLE_PATIENT
 }

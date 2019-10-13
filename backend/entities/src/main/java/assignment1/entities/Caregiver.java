@@ -13,18 +13,18 @@ public class Caregiver extends User {
     private List<Patient> patients;
 
     public Caregiver() {
-        this.role = UserRole.CAREGIVER;
+        this.role = UserRole.ROLE_CAREGIVER;
     }
 
     public Caregiver(Long id, String username, String gender, String address, String name, Date birthDate) {
         super(id, username, gender, address, name, birthDate);
-        this.role = UserRole.CAREGIVER;
+        this.role = UserRole.ROLE_CAREGIVER;
     }
 
     public Caregiver(Long id, String username, String gender, String address, String name, Date birthDate, List<Patient> patients) {
         super(id, username, gender, address, name, birthDate);
         this.patients = patients;
-        this.role = UserRole.CAREGIVER;
+        this.role = UserRole.ROLE_CAREGIVER;
     }
 
     public List<Patient> getPatients() {

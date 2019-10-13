@@ -19,12 +19,12 @@ public class Patient extends User {
     private List<MedicationPlan> medicationPlans = new ArrayList<>();
 
     public Patient() {
-        this.role = UserRole.PATIENT;
+        this.role = UserRole.ROLE_PATIENT;
     }
 
     public Patient(Long id, String username, String gender, String address, String name, Date birthDate) {
         super(id, username, gender, address, name, birthDate);
-        this.role = UserRole.PATIENT;
+        this.role = UserRole.ROLE_PATIENT;
     }
 
     public Patient(Long id, String username, String gender, String address, String name, Date birthDate,
@@ -32,7 +32,7 @@ public class Patient extends User {
         super(id, username, gender, address, name, birthDate);
         this.caregiver = caregiver;
         this.medicationPlans = medicationPlans;
-        this.role = UserRole.PATIENT;
+        this.role = UserRole.ROLE_PATIENT;
     }
 
     public Caregiver getCaregiver() {
