@@ -3,8 +3,9 @@ package assignment1.entities;
 import javax.persistence.*;
 import java.sql.Date;
 
-@MappedSuperclass
-public class User extends BaseEntity {
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class User extends BaseEntity {
 
     @Column(name = "username")
     private String username;
@@ -29,6 +30,15 @@ public class User extends BaseEntity {
     protected UserRole role;
 
     public User() {
+    }
+
+    public User(Long id, String username, String gender, String address, String name, Date birthDate) {
+        super(id);
+        this.username = username;
+        this.gender = gender;
+        this.address = address;
+        this.name = name;
+        this.birthDate = birthDate;
     }
 
     public String getUsername() {

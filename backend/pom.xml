@@ -12,7 +12,7 @@
     <groupId>jp</groupId>
     <artifactId>asg2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>asg2</name>
+    <description>asg2</description>
     <description>Demo project for Spring Boot</description>
 
     <properties>
