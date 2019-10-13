@@ -4,4 +4,5 @@ import assignment1.entities.User;
 
 public interface UserService {
     User getUserAfterUsername(String username);
+    User getLoggedUser();
 }
