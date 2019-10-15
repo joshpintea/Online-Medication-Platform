@@ -12,6 +12,8 @@ const ApiRoutes = function () {
     this.drugUrl = this.baseUrl + "/api/drug";
     this.userUrl = this.baseUrl + "/api/user";
     this.loggedUserUrl = this.userUrl + "/logged";
+
+    this.sideEffectUrl = this.baseUrl + "/api/side_effect"
 };
 
 const AppRoutes = function () {
@@ -19,6 +21,11 @@ const AppRoutes = function () {
     this.doctorBaseUrl = "/doctor";
     this.patientBaseUrl = "/patient";
     this.caregiverBaseUrl = "/caregiver";
+    this.doctorDashboard = "/doctor/";
+    this.patientCrudUrl = this.doctorDashboard + "crud/patient";
+    this.drugCrudUrl = this.doctorDashboard + "crud/drug";
+    this.caregiverCrudUrl = this.doctorDashboard + "crud/caregiver";
+    this.sideEffectCrudUrl = this.doctorDashboard + "crud/side_effect";
 };
 
 

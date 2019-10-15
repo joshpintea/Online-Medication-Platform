@@ -1,2 +1,3 @@
 
-export * from './DoctorApp'
+export * from './DoctorApp';
+export * from './DoctorDashboard'

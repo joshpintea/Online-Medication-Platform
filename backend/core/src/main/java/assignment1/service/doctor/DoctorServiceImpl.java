@@ -47,6 +47,7 @@ public class DoctorServiceImpl implements DoctorService, CrudService<DoctorDto> 
 
     @Override
     public DoctorDto save(DoctorDto obj) {
+        // @todo check if username is unique, now return internal server error
         Doctor doctor = DoctorMapper.convertToEntity(obj);
 
         return DoctorMapper.convertToDto(this.doctorRepository.save(doctor));

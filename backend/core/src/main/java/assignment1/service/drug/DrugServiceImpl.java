@@ -48,6 +48,7 @@ public class DrugServiceImpl implements DrugService, CrudService<DrugDto> {
     @Override
     public DrugDto save(DrugDto obj) {
         Drug drug = DrugMapper.convertToEntity(obj);
-        return DrugMapper.convertToDto(this.drugRepository.save(drug));
+        Drug savedDrug = this.drugRepository.save(drug);
+        return DrugMapper.convertToDto(savedDrug);
     }
 }

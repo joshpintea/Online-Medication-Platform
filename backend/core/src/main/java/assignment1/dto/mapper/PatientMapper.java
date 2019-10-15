@@ -12,7 +12,8 @@ public class PatientMapper {
                 patientDto.getGender(),
                 patientDto.getAddress(),
                 patientDto.getName(),
-                patientDto.getBirthDate()
+                patientDto.getBirthDate(),
+                CaregiverMapper.convertToEntity(patientDto.getCaregiverDto())
         );
     }
 
@@ -24,7 +25,8 @@ public class PatientMapper {
                 patient.getAddress(),
                 patient.getName(),
                 patient.getBirthDate(),
-                patient.getRole()
+                patient.getRole(),
+                CaregiverMapper.convertToDto(patient.getCaregiver())
         );
     }
 }

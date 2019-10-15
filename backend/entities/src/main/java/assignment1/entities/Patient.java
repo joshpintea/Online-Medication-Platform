@@ -27,6 +27,12 @@ public class Patient extends User {
         this.role = UserRole.ROLE_PATIENT;
     }
 
+    public Patient(Long id, String username, String gender, String address, String name, Date birthDate, Caregiver caregiver) {
+        super(id, username, gender, address, name, birthDate);
+        this.role = UserRole.ROLE_PATIENT;
+        this.caregiver = caregiver;
+    }
+
     public Patient(Long id, String username, String gender, String address, String name, Date birthDate,
                    Caregiver caregiver, List<MedicationPlan> medicationPlans) {
         super(id, username, gender, address, name, birthDate);

@@ -14,4 +14,6 @@ public class EndpointsUtil {
 
     public static final String USER = API + "/user";
     public static final String LOGGED_USER = "/logged";
+
+    public static final String SIDE_EFFECT = API + "/side_effect";
 }

@@ -51,7 +51,15 @@ public class CaregiverServiceImpl implements CaregiverService, CrudService<Careg
     @Override
     public CaregiverDto save(CaregiverDto obj) {
         Caregiver caregiver = CaregiverMapper.convertToEntity(obj);
+        // check if caregiver exist.
+        if (caregiver.getId() != null) {
+            Caregiver caregiver1 = this.caregiverRepository.getOne(caregiver.getId());
 
+            // update fields that are not into the dto
+            if (caregiver1 != null){
+                caregiver.setPassword(caregiver1.getPassword());
+            }
+        }
         return CaregiverMapper.convertToDto(this.caregiverRepository.save(caregiver));
     }
 }

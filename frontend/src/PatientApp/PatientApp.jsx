@@ -1,4 +1,5 @@
 import React from 'react'
+import {NavBar} from "../NavBar";
 
 class PatientApp extends React.Component {
 
@@ -6,7 +7,10 @@ class PatientApp extends React.Component {
     render() {
         return (
             <div>
-                Patient app
+                <NavBar/>
+                <div className="jumbotron">
+                    Patient app
+                </div>
             </div>
         )
     }

@@ -51,7 +51,15 @@ public class PatientServiceImpl implements PatientService, CrudService<PatientDt
     @Override
     public PatientDto save(PatientDto obj) {
         Patient patient = PatientMapper.convertToEntity(obj);
+        // check if patient exist.
+        if (patient.getId() != null) {
+            Patient patient1 = this.patientRepository.getOne(patient.getId());
 
+            // update fields that are not into the dto
+            if (patient1 != null){
+                patient.setPassword(patient1.getPassword());
+            }
+        }
         return PatientMapper.convertToDto(this.patientRepository.save(patient));
     }
 

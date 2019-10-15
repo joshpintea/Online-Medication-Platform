@@ -8,12 +8,7 @@ import java.util.List;
 public class SideEffect extends BaseEntity {
     private String description;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(
-            name = "drug_to_side_effects",
-            joinColumns = {@JoinColumn(name = "side_effect_id")},
-            inverseJoinColumns = {@JoinColumn(name = "drug_id")}
-    )
+    @ManyToMany(mappedBy="sideEffects")
     private List<Drug> drugs = new ArrayList<>();
 
     public SideEffect() {
@@ -33,5 +28,12 @@ public class SideEffect extends BaseEntity {
 
     public void setDrugs(List<Drug> drugs) {
         this.drugs = drugs;
+    }
+
+    @Override
+    public String toString() {
+        return "SideEffect{" +
+                "description='" + description  +
+                '}';
     }
 }

@@ -9,10 +9,10 @@ class App extends React.Component {
 
         const loggedUser = JSON.parse(localStorage.getItem(constants.loggedUser));
         const pathAndComponent = dispatchRoutesByUser((loggedUser !== null) ? loggedUser.userRole : '');
-
+        console.log(pathAndComponent.path)
         return (
             <div className={"container"}>
-                <div className={"routes"}>
+                <div className={""}>
                     <Router>
                         <Switch>
                             <Route path={pathAndComponent.path} component={pathAndComponent.component}/>

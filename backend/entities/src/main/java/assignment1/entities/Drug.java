@@ -1,7 +1,6 @@
 package assignment1.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +9,12 @@ public class Drug extends BaseEntity {
     private String name;
     private Long dosage;
 
-    @ManyToMany(mappedBy = "drugs")
+    @ManyToMany
+    @JoinTable(
+            name = "drug_to_side_effects",
+            joinColumns = {@JoinColumn(name = "drug_id")},
+            inverseJoinColumns = {@JoinColumn(name = "side_effect_id")}
+    )
     private List<SideEffect> sideEffects = new ArrayList<>();
 
     @ManyToMany(mappedBy = "drugs")
@@ -49,5 +53,14 @@ public class Drug extends BaseEntity {
 
     public void setMedicationPlans(List<MedicationPlan> medicationPlans) {
         this.medicationPlans = medicationPlans;
+    }
+
+    @Override
+    public String toString() {
+        return "Drug{" +
+                "name='" + name + '\'' +
+                ", dosage=" + dosage +
+                ", sideEffects=" + sideEffects +
+                '}';
     }
 }
