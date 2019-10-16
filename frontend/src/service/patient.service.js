@@ -4,7 +4,9 @@ import {constants} from "../AppConstants";
 export const patientService = {
     getAll,
     deleteObj,
-    saveObj
+    saveObj,
+    getMedicationsPlanForPatient,
+    getOne
 };
 
 function getAll() {
@@ -17,4 +19,12 @@ function deleteObj(id) {
 
 function saveObj(obj) {
     return baseService.postMethod(constants.routes.api.patientUrl, obj);
+}
+
+function getMedicationsPlanForPatient(patientId) {
+    return baseService.getMethod(constants.routes.api.getMedicationPlanForPatientUrl + patientId);
+}
+
+function getOne(patientId) {
+    return baseService.getMethod(constants.routes.api.patientUrl + "/" + patientId);
 }

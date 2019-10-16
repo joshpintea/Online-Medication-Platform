@@ -40,7 +40,7 @@ class PatientForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const {username, gender, address, name, birthDate, caregiverSelected, caregivers} = this.state;
-        let timestampBirthDate = new Date(birthDate).getTime() / 1000;
+        let timestampBirthDate = new Date(birthDate).getTime();
 
 
         if (!username || !address || !name || !birthDate) {

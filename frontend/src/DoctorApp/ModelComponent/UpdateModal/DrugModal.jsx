@@ -54,8 +54,12 @@ class DrugModal extends BaseUpdateModel {
             description: sideEffect.label
         }));
 
+        if (obj.dosage <= 0) {
+            this.setState({error: "Dosage need to be greater than zero"});
+            return;
+        }
 
-        if (!obj.name) {
+        if (!obj.name || !obj.dosage) {
             this.setState({submitted: true});
             return;
         }

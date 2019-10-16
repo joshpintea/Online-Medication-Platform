@@ -3,6 +3,7 @@ package assignment1.controller;
 import assignment1.dto.MedicationPlanDto;
 import assignment1.dto.PatientDto;
 import assignment1.exception.ObjectNotFound;
+import assignment1.exception.UsernameIsTaken;
 import assignment1.service.CrudService;
 import assignment1.service.patient.PatientService;
 import assignment1.util.EndpointsUtil;
@@ -37,7 +38,7 @@ public class PatientController {
     }
 
     @PostMapping
-    public PatientDto save(@RequestBody PatientDto patientDto) {
+    public PatientDto save(@RequestBody PatientDto patientDto) throws UsernameIsTaken {
         return this.patientCrudService.save(patientDto);
     }
 

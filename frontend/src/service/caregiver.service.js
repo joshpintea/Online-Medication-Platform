@@ -4,7 +4,8 @@ import {baseService} from "./base.service";
 export const caregiverService = {
     getAll,
     deleteObj,
-    saveObj
+    saveObj,
+    getCaregiverPatient
 };
 
 function getAll() {
@@ -17,4 +18,9 @@ function deleteObj(id) {
 
 function saveObj(obj) {
     return baseService.postMethod(constants.routes.api.caregiverUrl, obj);
+}
+
+function getCaregiverPatient(caregiverId) {
+    const url = constants.routes.api.getCaregiverPatientsUrl + caregiverId;
+    return baseService.getMethod(url);
 }

@@ -40,8 +40,12 @@ class DrugForm extends React.Component {
             description: sideEffect.label
         }));
 
+        if (dosage <= 0) {
+            this.setState({error: "Dosage need to be greater than zero"});
+            return;
+        }
 
-        if (!name && !dosage) {
+        if (!name || !dosage) {
             this.setState({submitted: true});
             return;
         }

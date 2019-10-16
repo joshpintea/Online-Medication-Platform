@@ -1,6 +1,7 @@
 package assignment1.service;
 
 import assignment1.exception.ObjectNotFound;
+import assignment1.exception.UsernameIsTaken;
 
 import java.util.List;
 
@@ -15,5 +16,5 @@ public interface CrudService<Dto> {
      * @param obj
      * @return
      */
-    Dto save(Dto obj);
+    Dto save(Dto obj) throws UsernameIsTaken;
 }

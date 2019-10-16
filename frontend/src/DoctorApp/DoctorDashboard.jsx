@@ -1,5 +1,6 @@
 import * as React from "react";
 import {constants} from "../AppConstants";
+import {MedicationPlanForm} from "../MedicationPlan/MedicationPlanForm";
 
 
 class DoctorDashboard extends React.Component {
@@ -26,21 +27,28 @@ class DoctorDashboard extends React.Component {
             }
         );
         return (
-            <div className={"jumbotron"}>
-                <h1>Models</h1>
+            <div>
+                <div className={"jumbotron"}>
+                    <h1>Models</h1>
 
-                <table className="table table-dark">
-                    <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Model name</th>
-                        <th scope="col">Display</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        {tableContent}
-                    </tbody>
-                </table>
+                    <table className="table table-dark">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Model name</th>
+                            <th scope="col">Display</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {tableContent}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div className={"jumbotron"}>
+                    <h1>Create medication plan</h1>
+                    <MedicationPlanForm/>
+                </div>
             </div>
         );
     }

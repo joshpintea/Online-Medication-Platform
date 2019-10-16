@@ -24,7 +24,7 @@ class CaregiverForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const {username, gender, address, name, birthDate} = this.state;
-        let timestampBirthDate = new Date(birthDate).getTime() / 1000;
+        let timestampBirthDate = new Date(birthDate).getTime();
 
         if (!username || !address || !name || !birthDate) {
             this.setState({submitted: true});

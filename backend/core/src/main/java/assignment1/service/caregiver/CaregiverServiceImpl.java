@@ -1,11 +1,16 @@
 package assignment1.service.caregiver;
 
 import assignment1.dto.CaregiverDto;
+import assignment1.dto.PatientDto;
 import assignment1.dto.mapper.CaregiverMapper;
+import assignment1.dto.mapper.PatientMapper;
 import assignment1.entities.Caregiver;
+import assignment1.entities.User;
 import assignment1.exception.ObjectNotFound;
+import assignment1.exception.UsernameIsTaken;
 import assignment1.repository.CaregiverRepository;
 import assignment1.service.CrudService;
+import assignment1.service.user.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,8 +21,11 @@ public class CaregiverServiceImpl implements CaregiverService, CrudService<Careg
 
     private CaregiverRepository caregiverRepository;
 
-    public CaregiverServiceImpl(CaregiverRepository caregiverRepository) {
+    private UserService userService;
+
+    public CaregiverServiceImpl(CaregiverRepository caregiverRepository, UserService userService) {
         this.caregiverRepository = caregiverRepository;
+        this.userService = userService;
     }
 
     @Override
@@ -49,17 +57,38 @@ public class CaregiverServiceImpl implements CaregiverService, CrudService<Careg
     }
 
     @Override
-    public CaregiverDto save(CaregiverDto obj) {
+    public CaregiverDto save(CaregiverDto obj) throws UsernameIsTaken {
         Caregiver caregiver = CaregiverMapper.convertToEntity(obj);
         // check if caregiver exist.
         if (caregiver.getId() != null) {
             Caregiver caregiver1 = this.caregiverRepository.getOne(caregiver.getId());
 
             // update fields that are not into the dto
-            if (caregiver1 != null){
+            if (caregiver1 != null) {
                 caregiver.setPassword(caregiver1.getPassword());
             }
+        } else {
+            User user = this.userService.getUserAfterUsername(caregiver.getUsername());
+            if (user != null) {
+                throw new UsernameIsTaken();
+            }
         }
+
+
         return CaregiverMapper.convertToDto(this.caregiverRepository.save(caregiver));
+    }
+
+    @Override
+    public List<PatientDto> getPatientsOfCaregiver(Long id) throws ObjectNotFound {
+        Caregiver caregiver = this.caregiverRepository.getOne(id);
+
+        if (caregiver == null) {
+            throw new ObjectNotFound("Caregiver not found");
+        }
+
+        return caregiver.getPatients()
+                .stream()
+                .map(PatientMapper::convertToDto)
+                .collect(Collectors.toList());
     }
 }

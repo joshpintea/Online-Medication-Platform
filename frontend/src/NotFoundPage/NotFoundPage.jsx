@@ -1,8 +1,14 @@
 
 import React from 'react';
+import {constants} from "../AppConstants";
+import {dispatchRoutesByUser} from "../dispacher";
 
 class NotFoundPage extends React.Component {
     render() {
+        const user = JSON.parse(localStorage.getItem(constants.loggedUser));
+
+        const pathAndComponent = dispatchRoutesByUser((user !== null) ? user.userRole : '' );
+
         return (
             <div className="container justify-content-center vertical-center">
                 <div className="row">
@@ -16,7 +22,7 @@ class NotFoundPage extends React.Component {
                                 Sorry, an error has occured, Requested page not found!
                             </div>
                             <div className="error-actions">
-                                <a href="/home" className="btn btn-primary btn-lg"><span
+                                <a href={pathAndComponent.path} className="btn btn-primary btn-lg"><span
                                     className="glyphicon glyphicon-home"></span>
                                     Take Me Home </a>
                             </div>

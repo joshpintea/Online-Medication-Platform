@@ -33,7 +33,7 @@ public class DrugController {
     }
 
     @PostMapping
-    public DrugDto save(@RequestBody DrugDto drugDto) {
+    public DrugDto save(@RequestBody DrugDto drugDto) throws Exception {
         return this.drugService.save(drugDto);
     }
 }

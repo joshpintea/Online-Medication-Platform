@@ -1,5 +1,6 @@
 import React from 'react';
 import {MDBIcon} from "mdbreact";
+import {util} from "../../util/util";
 
 class ModelCrudComponent extends React.Component {
     constructor(props) {
@@ -105,6 +106,14 @@ class ModelCrudComponent extends React.Component {
 
         let tableData = objects.map ( (objectModel) => {
             let dataColumns = columns.map( (column) => {
+                if (column === 'birthDate') {
+                    return (
+                        <td>
+                            {util.parseDateToString(objectModel[column])}
+                        </td>
+                    )
+                }
+
                 return (
                     <td>
                         {objectModel[column]}

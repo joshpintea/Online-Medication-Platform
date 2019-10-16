@@ -2,6 +2,7 @@ import {BaseUpdateModel} from "./BaseUpdateModel";
 import React from "react";
 import {caregiverService, patientService} from "../../../service";
 import Select from "react-select";
+import {util} from "../../../util";
 
 class PatientModal extends BaseUpdateModel {
 
@@ -21,10 +22,12 @@ class PatientModal extends BaseUpdateModel {
             genderList: ['M', 'F'],
             caregiversList: [],
             caregiverSelected: {},
-            gender: {value: value, label: label}
+            gender: {value: value, label: label},
+            birthDate: '',
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChangeCustom = this.handleChangeCustom.bind(this);
     }
 
     componentDidMount() {
@@ -39,20 +42,29 @@ class PatientModal extends BaseUpdateModel {
     componentWillReceiveProps(nextProps) {
         super.componentWillReceiveProps(nextProps);
         if (nextProps.show) {
+
             const caregiverSelected = {
                 value: nextProps.obj.caregiverDto.id,
                 label: nextProps.obj.caregiverDto.name
             };
 
-            this.setState({caregiverSelected: caregiverSelected})
+            const date = new Date(nextProps.obj.birthDate);
+
+
+            const dateAsString = util.leftPad(date.getFullYear(),4)
+                                            + '-' + util.leftPad(date.getMonth() + 1, 2)
+                                            + '-' + util.leftPad(date.getDate(), 2);
+
+
+            this.setState({caregiverSelected: caregiverSelected, birthDate: dateAsString})
         }
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        const {obj, caregiverSelected, caregiversList} = this.state;
+        const {obj, caregiverSelected, caregiversList, birthDate} = this.state;
 
-        if (!obj.username || !obj.address || !obj.name || !obj.birthDate) {
+        if (!obj.username || !obj.address || !obj.name || !birthDate) {
             this.setState({submitted: true});
             return;
         }
@@ -66,6 +78,7 @@ class PatientModal extends BaseUpdateModel {
             }
         }
 
+        obj.birthDate = new Date(birthDate).getTime();
         obj.caregiverDto = caregiverModel;
 
         patientService.saveObj(obj).then(
@@ -87,11 +100,15 @@ class PatientModal extends BaseUpdateModel {
         this.setState({caregiverSelected: caregiverSelected});
     };
 
+    handleChangeCustom(e) {
+        const {name, value} = e.target;
+        this.setState({[name]: value});
+    }
+
     getContentForm() {
-        const {obj, gender, submitted, loading, error, caregiversList, caregiverSelected} = this.state;
-
+        const {obj, gender, submitted, loading, error, caregiversList, caregiverSelected, birthDate} = this.state;
         const genderList = ['M', 'F'];
-
+        console.log(birthDate);
         const genderOptions = genderList.map((g, i) => ({
             value: i,
             label: g
@@ -131,11 +148,11 @@ class PatientModal extends BaseUpdateModel {
                     }
                 </div>
 
-                <div className={'form-group' + (!obj.birthDate && submitted) ? 'has-error' : ''}>
+                <div className={'form-group' + (!birthDate && submitted) ? 'has-error' : ''}>
                     <label htmlFor="birthDate">BirthDate</label>
-                    <input type={'date'} className={'form-control'} name={'birthDate'} value={obj.birthDate}
-                           onChange={this.handleChange}/>
-                    {submitted && !obj.birthDate &&
+                    <input type={'date'} className={'form-control'} name={'birthDate'} value={birthDate}
+                           onChange={this.handleChangeCustom}/>
+                    {submitted && !birthDate &&
                     <div className="help-block">birthDate is required</div>
                     }
                 </div>

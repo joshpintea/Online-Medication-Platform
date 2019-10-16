@@ -1,10 +1,14 @@
 package assignment1.service.doctor;
 
 import assignment1.dto.DoctorDto;
+import assignment1.dto.MedicationPlanDto;
 import assignment1.dto.mapper.DoctorMapper;
+import assignment1.dto.mapper.MedicationPlanMapper;
 import assignment1.entities.Doctor;
+import assignment1.entities.MedicationPlan;
 import assignment1.exception.ObjectNotFound;
 import assignment1.repository.DoctorRepository;
+import assignment1.repository.MedicationPlanRepository;
 import assignment1.service.CrudService;
 import org.springframework.stereotype.Service;
 
@@ -14,9 +18,11 @@ import java.util.stream.Collectors;
 @Service
 public class DoctorServiceImpl implements DoctorService, CrudService<DoctorDto> {
     private DoctorRepository doctorRepository;
+    private MedicationPlanRepository medicationPlanRepository;
 
-    public DoctorServiceImpl(DoctorRepository doctorRepository) {
+    public DoctorServiceImpl(DoctorRepository doctorRepository, MedicationPlanRepository medicationPlanRepository) {
         this.doctorRepository = doctorRepository;
+        this.medicationPlanRepository = medicationPlanRepository;
     }
 
     @Override
@@ -51,5 +57,12 @@ public class DoctorServiceImpl implements DoctorService, CrudService<DoctorDto> 
         Doctor doctor = DoctorMapper.convertToEntity(obj);
 
         return DoctorMapper.convertToDto(this.doctorRepository.save(doctor));
+    }
+
+    @Override
+    public MedicationPlanDto createMedicationPlan(MedicationPlanDto medicationPlanDto) {
+        MedicationPlan medicationPlan = MedicationPlanMapper.convertToEntity(medicationPlanDto);
+
+        return MedicationPlanMapper.convertToDto(this.medicationPlanRepository.save(medicationPlan));
     }
 }

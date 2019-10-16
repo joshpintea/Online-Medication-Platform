@@ -33,7 +33,7 @@ public class SideEffectController {
     }
 
     @PostMapping
-    public SideEffectDto save(@RequestBody SideEffectDto sideEffectDto) {
+    public SideEffectDto save(@RequestBody SideEffectDto sideEffectDto) throws Exception {
         return this.sideEffectDtoCrudService.save(sideEffectDto);
     }
 }

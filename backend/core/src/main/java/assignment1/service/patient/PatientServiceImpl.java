@@ -5,9 +5,12 @@ import assignment1.dto.PatientDto;
 import assignment1.dto.mapper.MedicationPlanMapper;
 import assignment1.dto.mapper.PatientMapper;
 import assignment1.entities.Patient;
+import assignment1.entities.User;
 import assignment1.exception.ObjectNotFound;
+import assignment1.exception.UsernameIsTaken;
 import assignment1.repository.PatientRepository;
 import assignment1.service.CrudService;
+import assignment1.service.user.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,8 +21,11 @@ public class PatientServiceImpl implements PatientService, CrudService<PatientDt
 
     private PatientRepository patientRepository;
 
-    public PatientServiceImpl(PatientRepository patientRepository) {
+    private UserService userService;
+
+    public PatientServiceImpl(PatientRepository patientRepository, UserService userService) {
         this.patientRepository = patientRepository;
+        this.userService = userService;
     }
 
     @Override
@@ -49,7 +55,7 @@ public class PatientServiceImpl implements PatientService, CrudService<PatientDt
     }
 
     @Override
-    public PatientDto save(PatientDto obj) {
+    public PatientDto save(PatientDto obj) throws UsernameIsTaken {
         Patient patient = PatientMapper.convertToEntity(obj);
         // check if patient exist.
         if (patient.getId() != null) {
@@ -58,6 +64,11 @@ public class PatientServiceImpl implements PatientService, CrudService<PatientDt
             // update fields that are not into the dto
             if (patient1 != null){
                 patient.setPassword(patient1.getPassword());
+            }
+        } else {
+            User user = this.userService.getUserAfterUsername(patient.getUsername());
+            if (user != null) {
+                throw new UsernameIsTaken();
             }
         }
         return PatientMapper.convertToDto(this.patientRepository.save(patient));
