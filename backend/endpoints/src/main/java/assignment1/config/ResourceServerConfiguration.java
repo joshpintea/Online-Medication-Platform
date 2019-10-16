@@ -1,7 +1,9 @@
 package assignment1.config;
 
 import assignment1.entities.UserRole;
+import assignment1.util.EndpointsUtil;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
@@ -20,8 +22,12 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
         http
                 .anonymous().and()
                 .authorizeRequests()
-                .antMatchers("/test").hasRole(UserRole.ROLE_DOCTOR.toString().substring(5))
-                .antMatchers("/**").permitAll()
+                .antMatchers(HttpMethod.GET,EndpointsUtil.PATIENT + "/**").hasAnyRole(UserRole.ROLE_PATIENT.withoutRoleKey(), UserRole.ROLE_DOCTOR.withoutRoleKey())
+                .antMatchers(HttpMethod.GET, EndpointsUtil.CAREGIVER + EndpointsUtil.CAREGIVER_PATIENTS).hasRole(UserRole.ROLE_CAREGIVER.withoutRoleKey())
+                .antMatchers(EndpointsUtil.CAREGIVER).hasRole(UserRole.ROLE_DOCTOR.withoutRoleKey())
+                .antMatchers("/oauth/**").permitAll()
+                .antMatchers(EndpointsUtil.USER + "/**").permitAll()
+                .antMatchers("/**").hasRole(UserRole.ROLE_DOCTOR.withoutRoleKey())
                 .and().csrf().disable();
     }
 }
