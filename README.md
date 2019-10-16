@@ -1,12 +1,37 @@
-# DS_Assignment1
+# Installation
+Clone or download the project.
 
-  The module consists of an online platform designed to manage patients, caregivers and
-medication. The system can be accessed by three types of users after a login process: doctor,
-patient and caregiver. The doctor can perform CRUD operations on patient (defined by ID,
-name, birth date, gender, address, medical record) and caregiver (defined by ID, name, birth
-date, gender, address, list of patients taken care of) accounts and on the list of medication
-(defined by ID, name, list of side effects, dosage) available in the system. Furthermore, the
-doctor can create a medication plan for a patient, consisting of a list of medication and intake
-intervals needed to be taken daily, and the period of the treatment. The patients can view their
-accounts and their medication plans. The caregivers can view their associated patients and the
-corresponding medication plans. 
+Make sure if you have mysql installed on your machine, if you dont have it, you can download from here https://www.mysql.com/downloads/
+
+Download and install Node.js from nodejs.org/en/download/
+
+Download and install java jdk 1.8 and java jre 1.8
+
+Download and install maven.
+
+Navigate with a terminal into "frontend/" directory and install the app dependencies by running the following command
+
+                                                            
+    npm install
+ 
+ 
+ # Database config
+Change the name of database, user and password from this file:
+
+    "backend\core\src\main\resources\persistence.properties"
+ 
+ For first run of the backend app set also the "hibernate.hbm2ddl.auto" field from "none" to "create" and then change it back. In this way, the database and all the tables are created. 
+ 
+ # Running configuration
+ 
+ - start the mysql server
+ - start the backend server: by default it will start on the 8088 port.
+ - start the client: default port is 3000: navigate into "frontend/" directory and run the following command:
+   
+        npm start
+        
+                                         
+ 
+ 
+ 
+   
