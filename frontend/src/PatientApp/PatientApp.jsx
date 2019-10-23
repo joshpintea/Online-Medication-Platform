@@ -65,7 +65,7 @@ class PatientApp extends React.Component {
                     <h1>Medication plans</h1>
                     {medicationsPlan.length === 0 &&
                         <div className={"alert alert-danger"}>
-                            You are healthy mother fucker
+                            No medication plan for you.
                         </div>
                     }
                     {medicationsPlan.length !== 0 &&

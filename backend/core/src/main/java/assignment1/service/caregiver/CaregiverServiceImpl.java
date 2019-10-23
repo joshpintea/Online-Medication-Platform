@@ -72,6 +72,8 @@ public class CaregiverServiceImpl implements CaregiverService, CrudService<Careg
             if (user != null) {
                 throw new UsernameIsTaken();
             }
+
+            caregiver.setPassword("default");
         }
 
 

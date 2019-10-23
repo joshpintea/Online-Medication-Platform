@@ -70,6 +70,8 @@ public class PatientServiceImpl implements PatientService, CrudService<PatientDt
             if (user != null) {
                 throw new UsernameIsTaken();
             }
+
+            patient.setPassword("default");
         }
         return PatientMapper.convertToDto(this.patientRepository.save(patient));
     }

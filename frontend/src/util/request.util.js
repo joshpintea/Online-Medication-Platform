@@ -6,6 +6,12 @@ export function handleResponse(response) {
         if (!response.ok) {
             const error = (data && data.error_description)
                                 || (data && data.error) || data.message;
+
+            if (response.status === 401 || response.status === 403) {
+                localStorage.clear();
+                window.location.reload();
+            }
+
             return Promise.reject(error);
         }
 
