@@ -11,6 +11,8 @@ Download and install maven.
 
 Download and install python > 3.x.x
 
+Install rabbitmq 
+
 Navigate with a terminal into "frontend/" directory and install the app dependencies by running the following command
 
                                                             
