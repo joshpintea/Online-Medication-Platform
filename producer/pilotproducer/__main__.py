@@ -5,7 +5,7 @@ import sys
 
 if __name__ == "__main__":
     if (len(sys.argv) < 2):
-        print("Usage python -m pilotproducer [run_on_infinity]")
+        print("Usage python -m pilotproducer [run_on_infinite]")
         exit(-1)
 
     producer = ActivityProducer()
