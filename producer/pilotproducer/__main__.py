@@ -1,5 +1,5 @@
-
-from pilotproducer.send import send
+from pilotproducer.producer import ActivityProducer
 
 if __name__ == "__main__":
-    send("Hello World")
+    producer = ActivityProducer()
+    producer.run()
