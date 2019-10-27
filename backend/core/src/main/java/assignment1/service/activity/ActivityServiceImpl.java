@@ -8,6 +8,8 @@ import assignment1.repository.ActivityRepository;
 import assignment1.repository.PatientRepository;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +25,8 @@ public class ActivityServiceImpl implements ActivityService {
     private ActivityRepository activityRepository;
     private PatientRepository patientRepository;
     private SimpMessagingTemplate simpMessagingTemplate;
+
+    private Logger logger= LoggerFactory.getLogger(ActivityServiceImpl.class);
 
     public ActivityServiceImpl(ActivityRepository activityRepository, PatientRepository patientRepository,
                                SimpMessagingTemplate simpleMessagingTemplate) {
@@ -94,7 +98,9 @@ public class ActivityServiceImpl implements ActivityService {
 
             Long caregiverId = activity.getActivityPatient().getCaregiver().getId();
             String websocketPath = "/activity/rule_violated/" + caregiverId;
-            System.out.println("Activity violated: " + activity + " hours: " + hours );
+
+            this.logger.info("Activity violated: " + activity + " hours: "
+                                    + hours + " caregiver username: " + activity.getActivityPatient().getCaregiver().getUsername());
             this.simpMessagingTemplate.convertAndSend(websocketPath, ActivityMapper.convertToDto(activity));
         }
     }
