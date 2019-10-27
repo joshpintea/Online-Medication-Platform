@@ -1,9 +1,6 @@
 package assignment1.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +14,10 @@ public class Patient extends User {
 
     @OneToMany(mappedBy = "patient")
     private List<MedicationPlan> medicationPlans = new ArrayList<>();
+
+    @OneToMany(mappedBy = "patient", fetch = FetchType.EAGER)
+    private List<Activity> activities = new ArrayList<>();
+
 
     public Patient() {
         this.role = UserRole.ROLE_PATIENT;
@@ -55,5 +56,13 @@ public class Patient extends User {
 
     public void setMedicationPlans(List<MedicationPlan> medicationPlans) {
         this.medicationPlans = medicationPlans;
+    }
+
+    public List<Activity> getActivities() {
+        return activities;
+    }
+
+    public void setActivities(List<Activity> activities) {
+        this.activities = activities;
     }
 }
