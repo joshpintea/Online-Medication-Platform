@@ -2,8 +2,8 @@ package assignment1.entities;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity(name = "medication_plan")
 public class MedicationPlan extends BaseEntity {
@@ -22,7 +22,7 @@ public class MedicationPlan extends BaseEntity {
             joinColumns = {@JoinColumn(name = "medication_plan_id")},
             inverseJoinColumns = {@JoinColumn(name = "drug_id")}
     )
-    private List<Drug> drugs = new ArrayList<>();
+    private Set<Drug> drugs = new HashSet<>();
 
     @Column(name = "start_date")
     private Date startDate;
@@ -52,11 +52,11 @@ public class MedicationPlan extends BaseEntity {
         this.patient = patient;
     }
 
-    public List<Drug> getDrugs() {
+    public Set<Drug> getDrugs() {
         return drugs;
     }
 
-    public void setDrugs(List<Drug> drugs) {
+    public void setDrugs(Set<Drug> drugs) {
         this.drugs = drugs;
     }
 

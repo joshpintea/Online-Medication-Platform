@@ -11,10 +11,13 @@ import org.codehaus.jettison.json.JSONObject;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.sql.Timestamp;
 import java.util.Date;
 
+
 @Service
+@Transactional
 public class ActivityServiceImpl implements ActivityService {
 
     private ActivityRepository activityRepository;
@@ -51,19 +54,22 @@ public class ActivityServiceImpl implements ActivityService {
 
     public void processDataFromSensor(String activityAsJson) {
         ActivityDto activityModel = this.parseActivityFromJson(activityAsJson);
-        Patient patient = this.patientRepository.getOne(activityModel.getPatientId());
-        if (patient == null) {
+        Patient patient = null;
+        try {
+            patient = this.patientRepository.getOne(activityModel.getPatientId());
+        } catch (Exception ex) {
             System.out.println("Patient id " + activityModel.getPatientId() + " not found");
             return;
         }
+
 
         Activity activity = new Activity(patient, activityModel.getStart(),
                                         activityModel.getEnd(), activityModel.getActivityLabel());
 
         // save activity into the database
-        this.activityRepository.save(activity);
+        Activity activity1 = this.activityRepository.save(activity);
 
-        this.checkActivityRuleAndNotifyCaregiver(activity);
+        this.checkActivityRuleAndNotifyCaregiver(activity1);
     }
 
     /**
@@ -83,12 +89,16 @@ public class ActivityServiceImpl implements ActivityService {
 
         long diff = activity.getEndDate().getTime() - activity.getStartDate().getTime();
         long hours = diff / (3600000); // 100 * 60 * 60  convert from milliseconds in hours
-
         if (hours >= activityRule.getHours()) {
             // notify caregiver that patient break the rule
-            String websocketPath = "/activity/rule_violated/" + activity.getPatient().getCaregiver().getId();
-            System.out.println("Activity violated:" + activity.getActivityLabel() + " patientId: " + activity.getPatient().getId());
+
+            Long caregiverId = activity.getActivityPatient().getCaregiver().getId();
+            String websocketPath = "/activity/rule_violated/" + caregiverId;
+            System.out.println("Activity violated: " + activity + " hours: " + hours );
             this.simpMessagingTemplate.convertAndSend(websocketPath, ActivityMapper.convertToDto(activity));
         }
     }
+
+
+
 }

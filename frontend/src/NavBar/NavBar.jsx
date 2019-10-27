@@ -23,6 +23,9 @@ class NavBar extends React.Component {
         e.preventDefault();
     }
 
+    getLinks() {
+
+    }
 
     render() {
         const {user} = this.state;
@@ -36,6 +39,7 @@ class NavBar extends React.Component {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="navbar-nav mr-auto">
+                        {this.getLinks()}
                         <li className="nav-item">
                             <Link onClick={this.handleClick} to={"#"} className={"nav-link"}>Logout</Link>
                         </li>

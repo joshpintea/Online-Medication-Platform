@@ -31,9 +31,6 @@ def generate_activity(last_activity: str):
 
     patient_id = random.choice(patients)
 
-    print(start_activity)
-    print(end_activity)
-
     return {
         'patient_id': patient_id,
         'activity': activity_label,

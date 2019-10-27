@@ -30,6 +30,7 @@ public class User extends BaseEntity {
     protected UserRole role;
 
     public User() {
+        super();
     }
 
     public User(Long id, String username, String gender, String address, String name, Date birthDate) {

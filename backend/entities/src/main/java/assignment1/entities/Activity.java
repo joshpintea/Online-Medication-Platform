@@ -11,7 +11,7 @@ public class Activity extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name="patient_id")
-    private Patient patient;
+    private Patient activityPatient;
 
     @Column(name="start_date")
     private Date startDate;
@@ -25,19 +25,19 @@ public class Activity extends BaseEntity {
     public Activity() {
     }
 
-    public Activity(Patient patient, Date startDate, Date endDate, String activityLabel) {
-        this.patient = patient;
+    public Activity(Patient activityPatient, Date startDate, Date endDate, String activityLabel) {
+        this.activityPatient = activityPatient;
         this.startDate = startDate;
         this.endDate = endDate;
         this.activityLabel = activityLabel;
     }
 
-    public Patient getPatient() {
-        return patient;
+    public Patient getActivityPatient() {
+        return activityPatient;
     }
 
-    public void setPatient(Patient patient) {
-        this.patient = patient;
+    public void setActivityPatient(Patient activityPatient) {
+        this.activityPatient = activityPatient;
     }
 
     public Date getStartDate() {
@@ -62,5 +62,15 @@ public class Activity extends BaseEntity {
 
     public void setActivityLabel(String activityLabel) {
         this.activityLabel = activityLabel;
+    }
+
+    @Override
+    public String toString() {
+        return "Activity{" +
+                "activityPatient=" + activityPatient.getId() +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", activityLabel='" + activityLabel +
+                '}';
     }
 }

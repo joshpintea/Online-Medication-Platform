@@ -1,15 +1,16 @@
 package assignment1.entities;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity(name = "side_effect")
 public class SideEffect extends BaseEntity {
     private String description;
 
     @ManyToMany(mappedBy="sideEffects")
-    private List<Drug> drugs = new ArrayList<>();
+    private Set<Drug> drugs = new HashSet<>();
 
     public SideEffect() {
     }
@@ -22,11 +23,11 @@ public class SideEffect extends BaseEntity {
         this.description = description;
     }
 
-    public List<Drug> getDrugs() {
+    public Set<Drug> getDrugs() {
         return drugs;
     }
 
-    public void setDrugs(List<Drug> drugs) {
+    public void setDrugs(Set<Drug> drugs) {
         this.drugs = drugs;
     }
 

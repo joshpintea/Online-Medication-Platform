@@ -7,7 +7,7 @@ public class ActivityMapper {
 
     public static ActivityViewDto convertToDto(Activity activity) {
         return new ActivityViewDto(activity.getId(),
-                UserMapper.convertToDto(activity.getPatient()),
+                UserMapper.convertToDto(activity.getActivityPatient()),
                 activity.getStartDate(),
                 activity.getEndDate(),
                 activity.getActivityLabel());

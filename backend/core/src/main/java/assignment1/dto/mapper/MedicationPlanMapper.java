@@ -13,7 +13,7 @@ public class MedicationPlanMapper {
         medicationPlan.setDrugs(medicationPlanDto.getDrugsList()
                                 .stream()
                                 .map(DrugMapper::convertToEntity)
-                                .collect(Collectors.toList()));
+                                .collect(Collectors.toSet()));
         medicationPlan.setEndDate(medicationPlanDto.getEndDate());
         medicationPlan.setStartDate(medicationPlanDto.getStartDate());
         medicationPlan.setIntakeInterval(medicationPlanDto.getIntakeInterval());

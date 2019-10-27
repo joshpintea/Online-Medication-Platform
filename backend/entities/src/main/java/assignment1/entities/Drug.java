@@ -1,8 +1,13 @@
 package assignment1.entities;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Drug extends BaseEntity {
@@ -15,7 +20,7 @@ public class Drug extends BaseEntity {
             joinColumns = {@JoinColumn(name = "drug_id")},
             inverseJoinColumns = {@JoinColumn(name = "side_effect_id")}
     )
-    private List<SideEffect> sideEffects = new ArrayList<>();
+    private Set<SideEffect> sideEffects = new HashSet<>();
 
     @ManyToMany(mappedBy = "drugs")
     private List<MedicationPlan> medicationPlans = new ArrayList<>();
@@ -39,11 +44,11 @@ public class Drug extends BaseEntity {
         this.dosage = dosage;
     }
 
-    public List<SideEffect> getSideEffects() {
+    public Set<SideEffect> getSideEffects() {
         return sideEffects;
     }
 
-    public void setSideEffects(List<SideEffect> sideEffects) {
+    public void setSideEffects(Set<SideEffect> sideEffects) {
         this.sideEffects = sideEffects;
     }
 

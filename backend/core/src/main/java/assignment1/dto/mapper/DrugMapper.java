@@ -15,7 +15,7 @@ public class DrugMapper {
         drug.setSideEffects(drugDto.getSideEffects()
                             .stream()
                             .map(SideEffectMapper::convertToEntity)
-                            .collect(Collectors.toList()));
+                            .collect(Collectors.toSet()));
 
         return drug;
     }

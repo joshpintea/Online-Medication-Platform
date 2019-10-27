@@ -1,5 +1,12 @@
 from pilotproducer.producer import ActivityProducer
 
+import sys
+
+
 if __name__ == "__main__":
+    if (len(sys.argv) < 2):
+        print("Usage python -m pilotproducer [run_on_infinity]")
+        exit(-1)
+
     producer = ActivityProducer()
-    producer.run(infinite=False)
+    producer.run(infinite=(sys.argv[1] == "True"))

@@ -8,6 +8,7 @@ import assignment1.entities.Patient;
 import assignment1.entities.User;
 import assignment1.exception.ObjectNotFound;
 import assignment1.exception.UsernameIsTaken;
+import assignment1.repository.MedicationPlanRepository;
 import assignment1.repository.PatientRepository;
 import assignment1.service.CrudService;
 import assignment1.service.user.UserService;
@@ -20,12 +21,13 @@ import java.util.stream.Collectors;
 public class PatientServiceImpl implements PatientService, CrudService<PatientDto> {
 
     private PatientRepository patientRepository;
-
+    private MedicationPlanRepository medicationPlanRepository;
     private UserService userService;
 
-    public PatientServiceImpl(PatientRepository patientRepository, UserService userService) {
+    public PatientServiceImpl(PatientRepository patientRepository, MedicationPlanRepository medicationPlanRepository, UserService userService) {
         this.patientRepository = patientRepository;
         this.userService = userService;
+        this.medicationPlanRepository = medicationPlanRepository;
     }
 
     @Override
@@ -38,7 +40,8 @@ public class PatientServiceImpl implements PatientService, CrudService<PatientDt
     @Override
     public PatientDto getOne(Long id) throws ObjectNotFound {
         Patient patient = this.patientRepository.getOne(id);
-        if (patient == null) {
+
+        if (patient.getId() == null) {
             throw new ObjectNotFound("Patient not found");
         }
         return PatientMapper.convertToDto(patient);
@@ -62,7 +65,7 @@ public class PatientServiceImpl implements PatientService, CrudService<PatientDt
             Patient patient1 = this.patientRepository.getOne(patient.getId());
 
             // update fields that are not into the dto
-            if (patient1 != null){
+            if (patient1 != null) {
                 patient.setPassword(patient1.getPassword());
             }
         } else {
@@ -83,7 +86,7 @@ public class PatientServiceImpl implements PatientService, CrudService<PatientDt
             throw new ObjectNotFound("Patient not found");
         }
 
-        return patient.getMedicationPlans().stream()
+        return this.medicationPlanRepository.getAllByPatientId(id).stream()
                 .map(MedicationPlanMapper::convertToDto)
                 .collect(Collectors.toList());
     }

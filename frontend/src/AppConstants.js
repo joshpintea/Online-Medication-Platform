@@ -28,6 +28,7 @@ const AppRoutes = function () {
     this.drugCrudUrl = this.doctorDashboard + "crud/drug";
     this.caregiverCrudUrl = this.doctorDashboard + "crud/caregiver";
     this.sideEffectCrudUrl = this.doctorDashboard + "crud/side_effect";
+    this.activitiesViolated = this.caregiverBaseUrl + "/activities_violated";
 };
 
 

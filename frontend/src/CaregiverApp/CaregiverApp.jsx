@@ -1,10 +1,11 @@
 import React from 'react'
-import {NavBar} from "../NavBar";
+import {CaregiverNavBar, NavBar} from "../NavBar";
 import {caregiverService} from "../service";
 import {constants} from "../AppConstants";
-import {modelsColumnsView} from "../models";
-import {MDBIcon} from "mdbreact";
-import {util} from "../util";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
+import {CaregiverPatientsPage} from "./CaregiverPatientsPage";
+import {CaregiverNotificationPage} from "./CaregiverNotificationPage";
+import {NotFoundPage} from "../NotFoundPage";
 
 class CaregiverApp extends React.Component {
     constructor(props) {
@@ -25,56 +26,16 @@ class CaregiverApp extends React.Component {
         )
     }
     render() {
-        const {patientsList} = this.state;
-        const columns = modelsColumnsView.patient;
-        let tableColumns = columns.map ( (column) => {
-            return (
-                <th scope={"col"}>{column}</th>
-            )
-        });
-
-        let tableData = patientsList.map ( (objectModel) => {
-            let dataColumns = columns.map( (column) => {
-                if (column === 'birthDate') {
-                    return (
-                        <td>
-                            {util.parseDateToString(objectModel[column])}
-                        </td>
-                    )
-                }
-
-                return (
-                    <td>
-                        {objectModel[column]}
-                    </td>
-                )
-            });
-
-            return (
-                <tr>
-                    {dataColumns}
-                </tr>
-            )
-        });
-
         return (
             <div>
-                <NavBar/>
-
-                <div className={"jumbotron"}>
-                    <h1>Patients</h1>
-
-                    <table className={"table"}>
-                        <thead>
-                            <tr>
-                                {tableColumns}
-                            </tr>
-                        </thead>
-                        <tbody>
-                                {tableData}
-                        </tbody>
-                    </table>
-                </div>
+                <CaregiverNavBar />
+                <BrowserRouter>
+                    <Switch>
+                        <Route exact path={constants.routes.app.caregiverBaseUrl} component={CaregiverPatientsPage}/>
+                        <Route exact path={constants.routes.app.activitiesViolated} component={CaregiverNotificationPage}/>
+                        <Route component={NotFoundPage}/>
+                    </Switch>
+                </BrowserRouter>
             </div>
         )
     }

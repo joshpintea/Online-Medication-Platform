@@ -9,6 +9,7 @@ import assignment1.entities.User;
 import assignment1.exception.ObjectNotFound;
 import assignment1.exception.UsernameIsTaken;
 import assignment1.repository.CaregiverRepository;
+import assignment1.repository.PatientRepository;
 import assignment1.service.CrudService;
 import assignment1.service.user.UserService;
 import org.springframework.stereotype.Service;
@@ -20,12 +21,13 @@ import java.util.stream.Collectors;
 public class CaregiverServiceImpl implements CaregiverService, CrudService<CaregiverDto> {
 
     private CaregiverRepository caregiverRepository;
-
+    private PatientRepository patientRepository;
     private UserService userService;
 
-    public CaregiverServiceImpl(CaregiverRepository caregiverRepository, UserService userService) {
+    public CaregiverServiceImpl(CaregiverRepository caregiverRepository, UserService userService, PatientRepository patientRepository) {
         this.caregiverRepository = caregiverRepository;
         this.userService = userService;
+        this.patientRepository = patientRepository;
     }
 
     @Override
@@ -88,7 +90,7 @@ public class CaregiverServiceImpl implements CaregiverService, CrudService<Careg
             throw new ObjectNotFound("Caregiver not found");
         }
 
-        return caregiver.getPatients()
+        return this.patientRepository.getAllByCaregiverId(id)
                 .stream()
                 .map(PatientMapper::convertToDto)
                 .collect(Collectors.toList());
