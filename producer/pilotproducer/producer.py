@@ -4,11 +4,12 @@ from pilotproducer.send import send
 import time
 import json
 
+
 class ActivityProducer:
     def __init__(self):
         self.last_activity = ''
 
-    def run(self):
+    def run(self, infinite=True):
         while True:
             activity_dict, last_activity = generate_activity(last_activity=self.last_activity)
             self.last_activity = last_activity
@@ -17,4 +18,7 @@ class ActivityProducer:
 
             # sleep for one second
             time.sleep(1)
+
+            if not infinite:
+                break
 

@@ -31,11 +31,14 @@ def generate_activity(last_activity: str):
 
     patient_id = random.choice(patients)
 
+    print(start_activity)
+    print(end_activity)
+
     return {
         'patient_id': patient_id,
         'activity': activity_label,
-        'start': datetime.datetime.timestamp(start_activity),
-        'end': datetime.datetime.timestamp(end_activity)
+        'start': int(datetime.datetime.timestamp(start_activity) * 1000),
+        'end': int(datetime.datetime.timestamp(end_activity) * 1000)
     }, activity_label
 
 
