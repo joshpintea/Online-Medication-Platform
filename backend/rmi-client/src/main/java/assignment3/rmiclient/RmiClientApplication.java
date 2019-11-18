@@ -23,7 +23,7 @@ public class RmiClientApplication {
     public static void main(String[] args) {
 
         PillDispenser service = SpringApplication.run(RmiClientApplication.class, args).getBean(PillDispenser.class);
-        List<MedicationPlanDto> medicationsPlan = service.getActiveMedicationsPlanForPatient(1L);
+        List<MedicationPlanDto> medicationsPlan = service.getNotTakenMedicationPlans(1L);
         System.out.println(medicationsPlan);
     }
 

@@ -5,5 +5,5 @@ import assignment1.dto.MedicationPlanDto;
 import java.util.List;
 
 public interface PillDispenser {
-    List<MedicationPlanDto> getActiveMedicationsPlanForPatient(Long idPatient);
+    List<MedicationPlanDto> getNotTakenMedicationPlans(Long idPatient);
 }
