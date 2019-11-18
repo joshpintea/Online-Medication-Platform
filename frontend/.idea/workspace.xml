@@ -2,39 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b160175-de6c-43c3-8cbe-03377fc7358b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CaregiverApp/ActivityComponent.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CaregiverApp/CaregiverNotificationPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CaregiverApp/CaregiverPatientsPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/NavBar/CaregiverNavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/dto/mapper/ActivityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/dto/mapper/ActivityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/dto/mapper/DrugMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/dto/mapper/DrugMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/dto/mapper/MedicationPlanMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/dto/mapper/MedicationPlanMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/repository/CareGiverRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/repository/CareGiverRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/repository/MedicationPlanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/repository/MedicationPlanRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/repository/PatientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/repository/PatientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/service/activity/ActivityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/service/activity/ActivityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/service/caregiver/CaregiverServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/service/caregiver/CaregiverServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/service/patient/PatientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/service/patient/PatientServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/endpoints/src/main/java/assignment1/config/ResourceServerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/endpoints/src/main/java/assignment1/config/ResourceServerConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/Caregiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/Caregiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/Doctor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/Drug.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/Drug.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/MedicationPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/MedicationPlan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/SideEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/SideEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/parent/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/parent/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppConstants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CaregiverApp/CaregiverApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/CaregiverApp/CaregiverApp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NavBar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/NavBar/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NavBar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/NavBar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../producer/pilotproducer/activity_generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/../producer/pilotproducer/activity_generate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../producer/pilotproducer/producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../producer/pilotproducer/producer.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,43 +16,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CaregiverApp/CaregiverApp.jsx">
+        <entry file="file://$PROJECT_DIR$/src/DoctorApp/ModelComponent/UpdateModal/BaseUpdateModel.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="33" column="101" selection-start-line="33" selection-start-column="101" selection-end-line="33" selection-end-column="101" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="520">
+              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CaregiverApp/CaregiverPatientsPage.jsx">
+        <entry file="file://$PROJECT_DIR$/src/DoctorApp/ModelComponent/ModelCrudComponent.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="19" column="65" lean-forward="true" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CaregiverApp/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" column="30" lean-forward="true" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CaregiverApp/CaregiverNotificationPage.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+            <state relative-caret-position="1780">
+              <caret line="91" column="54" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -93,31 +37,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CaregiverApp/ActivityComponent.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="20" column="45" lean-forward="true" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/NavBar/NavBar.jsx">
+        <entry file="file://$PROJECT_DIR$/src/App/App.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="440">
-              <caret line="43" column="106" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="106" />
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
               <folding>
-                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CaregiverApp/ActivityComponent.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="21" column="75" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/NavBar/CaregiverNavBar.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="240">
+              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/src/NotFoundPage/NotFoundPage.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="500">
-              <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+              <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
               <folding>
                 <element signature="e#1#27#0" expanded="true" />
               </folding>
@@ -146,8 +93,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppConstants.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="30" column="77" lean-forward="true" selection-start-line="30" selection-start-column="77" selection-end-line="30" selection-end-column="77" />
+            <state relative-caret-position="240">
+              <caret line="12" column="63" selection-start-line="12" selection-start-column="63" selection-end-line="12" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/auth.header.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="17" selection-start-line="17" selection-end-line="18" selection-end-column="117" />
             </state>
           </provider>
         </entry>
@@ -219,7 +184,6 @@
         <option value="$PROJECT_DIR$/src/CaregiverApp/CaregiverPatientsPage.jsx" />
         <option value="$PROJECT_DIR$/src/CaregiverApp/ActivitivityComponent.js" />
         <option value="$PROJECT_DIR$/src/CaregiverApp/ActivitivityComponent.jsx" />
-        <option value="$PROJECT_DIR$/src/CaregiverApp/CaregiverNotificationPage.jsx" />
         <option value="$PROJECT_DIR$/src/CaregiverApp/index.js" />
         <option value="$PROJECT_DIR$/src/NavBar/CaregiverNavbar.js" />
         <option value="$PROJECT_DIR$/src/NavBar/NavBar.jsx" />
@@ -227,14 +191,15 @@
         <option value="$PROJECT_DIR$/src/CaregiverApp/CaregiverApp.jsx" />
         <option value="$PROJECT_DIR$/src/NavBar/CaregiverNavbar.jsx" />
         <option value="$PROJECT_DIR$/src/NavBar/CaregiverNavBar.jsx" />
+        <option value="$PROJECT_DIR$/src/CaregiverApp/CaregiverNotificationPage.jsx" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="240" />
+    <option name="y" value="131" />
+    <option name="width" value="1440" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -248,6 +213,11 @@
             <path>
               <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -359,7 +329,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/DoctorApp/ModelsComponents" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Python/Shop_Raluca/frontend/frontend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -411,17 +381,26 @@
       <workItem from="1571137533536" duration="27876000" />
       <workItem from="1571227380825" duration="7898000" />
       <workItem from="1572185202951" duration="5845000" />
+      <workItem from="1573118801987" duration="1967000" />
+      <workItem from="1573674824633" duration="206000" />
+      <workItem from="1573675402403" duration="2054000" />
+      <workItem from="1573722301481" duration="1230000" />
+      <workItem from="1573740461625" duration="109000" />
+      <workItem from="1573741625473" duration="28000" />
+      <workItem from="1573755196032" duration="607000" />
+      <workItem from="1573991229931" duration="680000" />
+      <workItem from="1574002291541" duration="623000" />
+      <workItem from="1574038090999" duration="12000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53998000" />
+    <option name="totallyTimeSpent" value="61514000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18229716" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18229716" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -435,8 +414,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49947312" weight="0.13217768" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5015806" side_tool="true" visible="true" weight="0.1419285" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49841937" visible="true" weight="0.1419285" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5073762" side_tool="true" visible="true" weight="0.1414791" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4926238" visible="true" weight="0.1414791" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -467,8 +446,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/tempCode/SideEffectCrudComponent.js" />
-    <entry file="file://$PROJECT_DIR$/src/tempCode/SaveDrugModal.js" />
     <entry file="file://$PROJECT_DIR$/src/tempCode/CaregiverCrudComponent.js" />
     <entry file="file://$PROJECT_DIR$/src/service/base.service.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -543,16 +520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginPage/LoginPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="39" column="49" lean-forward="true" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/service/caregiver.service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -624,33 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DoctorApp/ModelComponent/CreateForm/SideEffectForm.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="42" column="39" lean-forward="true" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DoctorApp/ModelComponent/ModelCrudComponent.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="106" column="56" lean-forward="true" selection-start-line="106" selection-start-column="56" selection-end-line="106" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DoctorApp/ModelComponent/UpdateModal/PatientModal.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -701,20 +641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DoctorApp/ModelComponent/UpdateModal/BaseUpdateModel.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/App.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DoctorApp/ModelComponent/CreateForm/PatientForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="880">
@@ -722,13 +648,6 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/auth.header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -788,36 +707,133 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CaregiverApp/index.js">
+    <entry file="file://$PROJECT_DIR$/src/CaregiverApp/CaregiverApp.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="30" lean-forward="true" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+        <state relative-caret-position="520">
+          <caret line="33" column="101" selection-start-line="33" selection-start-column="101" selection-end-line="33" selection-end-column="101" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CaregiverApp/ActivityComponent.jsx">
+    <entry file="file://$PROJECT_DIR$/src/CaregiverApp/CaregiverPatientsPage.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="45" lean-forward="true" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+        <state relative-caret-position="300">
+          <caret line="19" column="65" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CaregiverApp/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CaregiverApp/CaregiverNotificationPage.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+        <state relative-caret-position="960">
+          <caret line="51" column="29" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/LoginPage/LoginPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" selection-start-line="6" selection-end-line="90" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/NavBar/NavBar.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="43" column="106" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="106" />
+        <state relative-caret-position="820">
+          <caret line="43" column="106" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="106" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/user.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="38" column="15" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DoctorApp/ModelComponent/CreateForm/SideEffectForm.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DoctorApp/ModelComponent/UpdateModal/BaseUpdateModel.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DoctorApp/ModelComponent/ModelCrudComponent.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1780">
+          <caret line="91" column="54" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/App.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NavBar/CaregiverNavBar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NotFoundPage/NotFoundPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+          <folding>
+            <element signature="e#1#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -829,47 +845,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CaregiverApp/CaregiverApp.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="33" column="101" selection-start-line="33" selection-start-column="101" selection-end-line="33" selection-end-column="101" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CaregiverApp/CaregiverPatientsPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="65" lean-forward="true" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppConstants.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="30" column="77" lean-forward="true" selection-start-line="30" selection-start-column="77" selection-end-line="30" selection-end-column="77" />
+        <state relative-caret-position="240">
+          <caret line="12" column="63" selection-start-line="12" selection-start-column="63" selection-end-line="12" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NotFoundPage/NotFoundPage.jsx">
+    <entry file="file://$PROJECT_DIR$/src/util/auth.header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-          <folding>
-            <element signature="e#1#27#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="220">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NavBar/CaregiverNavBar.jsx">
+    <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="340">
+          <caret line="17" selection-start-line="17" selection-end-line="18" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CaregiverApp/ActivityComponent.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="21" column="75" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
         </state>
       </provider>
     </entry>
