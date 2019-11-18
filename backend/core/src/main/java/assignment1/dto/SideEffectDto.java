@@ -1,6 +1,8 @@
 package assignment1.dto;
 
-public class SideEffectDto {
+import java.io.Serializable;
+
+public class SideEffectDto implements Serializable {
     private Long id;
     private String description;
 

@@ -24,7 +24,7 @@ public class DoctorMapper {
                 doctor.getAddress(),
                 doctor.getName(),
                 doctor.getBirthDate(),
-                doctor.getRole()
+                UserRoleMapper.convertToDto(doctor.getRole())
         );
     }
 }

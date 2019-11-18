@@ -24,7 +24,7 @@ public class CaregiverMapper {
                 caregiver.getAddress(),
                 caregiver.getName(),
                 caregiver.getBirthDate(),
-                caregiver.getRole()
+                UserRoleMapper.convertToDto(caregiver.getRole())
         );
     }
 }

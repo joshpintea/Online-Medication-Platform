@@ -13,7 +13,7 @@ public class UserMapper {
                 user.getAddress(),
                 user.getName(),
                 user.getBirthDate(),
-                user.getRole()
+                UserRoleMapper.convertToDto(user.getRole())
         );
     }
 }

@@ -1,8 +1,9 @@
 package assignment1.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class ActivityDto {
+public class ActivityDto implements Serializable {
     private Long patientId;
     private String activityLabel;
     private Date start;

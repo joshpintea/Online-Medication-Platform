@@ -25,7 +25,7 @@ public class PatientMapper {
                 patient.getAddress(),
                 patient.getName(),
                 patient.getBirthDate(),
-                patient.getRole(),
+                UserRoleMapper.convertToDto(patient.getRole()),
                 CaregiverMapper.convertToDto(patient.getCaregiver())
         );
     }

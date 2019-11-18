@@ -1,22 +1,21 @@
 package assignment1.dto;
 
-import assignment1.entities.UserRole;
-
+import java.io.Serializable;
 import java.sql.Date;
 
-public class UserDto {
+public class UserDto implements Serializable {
     private Long id;
     private String username;
     private String gender;
     private String address;
     private String name;
     private Date birthDate;
-    private UserRole userRole;
+    private UserRoleDto userRole;
 
     public UserDto() {
     }
 
-    public UserDto(Long id, String username, String gender, String address, String name, Date birthDate, UserRole userRole) {
+    public UserDto(Long id, String username, String gender, String address, String name, Date birthDate, UserRoleDto userRole) {
         this.id = id;
         this.username = username;
         this.gender = gender;
@@ -74,11 +73,11 @@ public class UserDto {
         this.birthDate = birthDate;
     }
 
-    public UserRole getUserRole() {
+    public UserRoleDto getUserRole() {
         return userRole;
     }
 
-    public void setUserRole(UserRole userRole) {
+    public void setUserRole(UserRoleDto userRole) {
         this.userRole = userRole;
     }
 }

@@ -16,7 +16,7 @@ public class MedicationPlan extends BaseEntity {
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "medication_plan_to_drugs",
             joinColumns = {@JoinColumn(name = "medication_plan_id")},

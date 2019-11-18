@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface MedicationPlanRepository extends BaseRepository<MedicationPlan> {
     List<MedicationPlan> getAllByPatientId(Long id);
-    List<MedicationPlan> getAllByPatientIdAndStartDateGreaterThanAndEndDateLessThan(Long id, Date startDate, Date endDate);
+    List<MedicationPlan> getAllByPatientIdAndStartDateLessThanAndEndDateGreaterThan(Long id, Date startDate, Date endDate);
 }

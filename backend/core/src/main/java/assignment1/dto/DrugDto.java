@@ -1,9 +1,10 @@
 package assignment1.dto;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DrugDto {
+public class DrugDto implements Serializable {
     private Long id;
     private String name;
     private Long dosage;

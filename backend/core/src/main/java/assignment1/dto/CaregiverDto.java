@@ -1,16 +1,15 @@
 package assignment1.dto;
 
-import assignment1.entities.UserRole;
-
+import java.io.Serializable;
 import java.sql.Date;
 
-public class CaregiverDto extends UserDto {
+public class CaregiverDto extends UserDto implements Serializable {
 
     public CaregiverDto() {
     }
 
     public CaregiverDto(Long id, String username, String gender, String address, String name, Date birthDate,
-                        UserRole userRole) {
+                        UserRoleDto userRole) {
         super(id, username, gender, address, name, birthDate, userRole);
     }
 

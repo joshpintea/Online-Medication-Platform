@@ -1,9 +1,10 @@
 package assignment1.dto;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
-public class MedicationPlanDto {
+public class MedicationPlanDto implements Serializable {
     private Long id;
     private Date startDate;
     private Date endDate;
