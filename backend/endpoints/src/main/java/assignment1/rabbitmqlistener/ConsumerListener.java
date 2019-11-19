@@ -3,6 +3,7 @@ package assignment1.rabbitmqlistener;
 import assignment1.service.activity.ActivityService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +20,9 @@ public class ConsumerListener {
     }
 
     @RabbitListener(queues = QUEUE_NAME)
-    public void listen(String in) {
-        this.logger.info("Message read from myQueue : " + in);
-        this.activityService.processDataFromSensor(in);
+    public void listen(Message in) {
+        String messageAsJson = new String(in.getBody());
+        this.logger.info("Message read from myQueue : " + messageAsJson);
+        this.activityService.processDataFromSensor(messageAsJson);
     }
 }

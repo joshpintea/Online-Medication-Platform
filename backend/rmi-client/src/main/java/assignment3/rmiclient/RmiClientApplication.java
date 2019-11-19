@@ -1,30 +1,32 @@
 package assignment3.rmiclient;
 
-import assignment1.dto.MedicationPlanDto;
 import assignment1.service.pildispenser.PillDispenser;
-import org.springframework.boot.SpringApplication;
+import assignment3.rmiclient.presentation.View;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.remoting.rmi.RmiProxyFactoryBean;
-
-import java.util.List;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class RmiClientApplication {
 
-    @Bean
-    RmiProxyFactoryBean service() {
-        RmiProxyFactoryBean rmiProxyFactory = new RmiProxyFactoryBean();
-        rmiProxyFactory.setServiceUrl("rmi://localhost:1099/PillDispenser");
-        rmiProxyFactory.setServiceInterface(PillDispenser.class);
-        return rmiProxyFactory;
-    }
-
     public static void main(String[] args) {
 
-        PillDispenser service = SpringApplication.run(RmiClientApplication.class, args).getBean(PillDispenser.class);
-        List<MedicationPlanDto> medicationsPlan = service.getNotTakenMedicationPlans(2L);
-        System.out.println(medicationsPlan);
+        SpringApplicationBuilder builder = new SpringApplicationBuilder(RmiClientApplication.class);
+        builder.headless(false);
+
+        ConfigurableApplicationContext context = builder.run(args);
+
+        View view = context.getBean(View.class);
+//        List<MedicationPlanDto> medicationsPlan = service.getNotTakenMedicationPlans(2L);
+//        System.out.println(medicationsPlan);
+//        System.out.println(medicationsPlan);
+//        for (MedicationPlanDto medicationPlanDto: medicationsPlan) {
+//            try {
+//                service.takeMedication(medicationPlanDto);
+//            } catch (Exception e) {
+//                System.out.println(e.getMessage());
+//            }
+//        }
     }
 
 }

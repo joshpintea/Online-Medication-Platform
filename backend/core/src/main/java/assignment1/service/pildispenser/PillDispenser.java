@@ -8,4 +8,6 @@ import java.util.List;
 public interface PillDispenser {
     List<MedicationPlanDto> getNotTakenMedicationPlans(Long idPatient);
     MedicationPlanDto takeMedication(MedicationPlanDto medicationPlanDto) throws IncorrectInterval;
+    void patientDidNotTakeMedication(MedicationPlanDto medicationPlanDto);
+
 }

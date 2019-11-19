@@ -7,7 +7,10 @@ import assignment1.entities.MedicationPlanTaken;
 import assignment1.exception.IncorrectInterval;
 import assignment1.repository.MedicationPlanRepository;
 import assignment1.repository.MedicationPlanTakenRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -15,10 +18,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class PillDispenserImpl implements PillDispenser {
 
     private MedicationPlanTakenRepository medicationPlanTakenRepository;
     private MedicationPlanRepository medicationPlanRepository;
+
+    private Logger logger = LoggerFactory.getLogger(PillDispenserImpl.class);
 
     public PillDispenserImpl(MedicationPlanTakenRepository medicationPlanTakenRepository,
                              MedicationPlanRepository medicationPlanRepository) {
@@ -32,7 +38,7 @@ public class PillDispenserImpl implements PillDispenser {
 
         List<MedicationPlan> allMedicationsPlan = this.medicationPlanRepository.findAll();
         List<MedicationPlan> medicationPlans = new ArrayList<>();
-        for (MedicationPlan medicationPlan: allMedicationsPlan) {
+        for (MedicationPlan medicationPlan : allMedicationsPlan) {
             if (medicationPlan.getStartDate().before(today) && medicationPlan.getEndDate().after(today)) {
                 medicationPlans.add(medicationPlan);
             }
@@ -56,9 +62,29 @@ public class PillDispenserImpl implements PillDispenser {
         java.util.Date currentDate = new java.util.Date();
 
         Integer hour = currentDate.getHours();
+        MedicationPlan medicationPlan = this.medicationPlanRepository.getOne(medicationPlanDto.getId());
 
-        System.out.println(hour);
 
-        return null;
+        // allow to take medication only on even intervals generated with the intake interval
+        Integer intakeInterval = medicationPlan.getIntakeInterval();
+        if ((hour / intakeInterval) % 2 == 1) {
+            throw new IncorrectInterval();
+        }
+
+
+        MedicationPlanTaken medicationPlanTaken = new MedicationPlanTaken(
+                medicationPlan,
+                new Date(currentDate.getTime()),
+                hour
+        );
+
+
+        this.medicationPlanTakenRepository.save(medicationPlanTaken);
+        return medicationPlanDto;
+    }
+
+    @Override
+    public void patientDidNotTakeMedication(MedicationPlanDto medicationPlanDto) {
+        this.logger.info(medicationPlanDto.getPatientDto().getUsername() + " did not take his medication at the prescribed time.");
     }
 }

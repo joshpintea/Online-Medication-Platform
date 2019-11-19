@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b160175-de6c-43c3-8cbe-03377fc7358b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/service/pildispenser/PillDispenserImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/service/pildispenser/PillDispenserImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/rmi-client/src/main/java/assignment3/rmiclient/RmiClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/rmi-client/src/main/java/assignment3/rmiclient/RmiClientApplication.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -40,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/src/App/App.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="440">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -195,7 +196,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="240" />
     <option name="y" value="131" />
     <option name="width" value="1440" />
@@ -207,6 +208,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -323,7 +325,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -391,11 +392,12 @@
       <workItem from="1573991229931" duration="680000" />
       <workItem from="1574002291541" duration="623000" />
       <workItem from="1574038090999" duration="12000" />
+      <workItem from="1574094303650" duration="602000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61514000" />
+    <option name="totallyTimeSpent" value="62116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -414,8 +416,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49947312" weight="0.13217768" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5073762" side_tool="true" visible="true" weight="0.1414791" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4926238" visible="true" weight="0.1414791" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50790304" side_tool="true" visible="true" weight="0.1414791" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49209693" visible="true" weight="0.1414791" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -811,7 +813,7 @@
     <entry file="file://$PROJECT_DIR$/src/App/App.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>

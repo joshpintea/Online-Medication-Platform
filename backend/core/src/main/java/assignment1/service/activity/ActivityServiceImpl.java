@@ -58,6 +58,7 @@ public class ActivityServiceImpl implements ActivityService {
 
     public void processDataFromSensor(String activityAsJson) {
         ActivityDto activityModel = this.parseActivityFromJson(activityAsJson);
+
         Patient patient = null;
         try {
             patient = this.patientRepository.getOne(activityModel.getPatientId());
