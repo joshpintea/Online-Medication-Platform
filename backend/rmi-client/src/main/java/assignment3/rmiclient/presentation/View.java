@@ -1,5 +1,6 @@
 package assignment3.rmiclient.presentation;
 
+import assignment3.rmiclient.presentation.window.MedicationPlanWindow;
 import org.springframework.stereotype.Component;
 
 import javax.swing.*;
@@ -8,8 +9,10 @@ import java.awt.*;
 @Component
 public class View extends JFrame {
 
-    public View() {
-        super();
+    private MedicationPlanWindow medicationPlanWindow;
+
+    public View(MedicationPlanWindow medicationPlanWindow) throws HeadlessException {
+        this.medicationPlanWindow = medicationPlanWindow;
         this.initialize();
     }
 
@@ -29,7 +32,8 @@ public class View extends JFrame {
     }
 
     private void initialize() {
-        this.setSize(new Dimension(600, 600));
+        this.setSize(new Dimension(800, 800));
+        this.setWindow(this.medicationPlanWindow);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setTitle("Medication platform");
         this.setLocationRelativeTo (null);

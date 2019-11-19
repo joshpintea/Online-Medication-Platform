@@ -1,7 +1,7 @@
 package assignment1.exception;
 
-public class IncorrectInterval extends Exception {
-    public IncorrectInterval() {
+public class InvalidInterval extends Exception {
+    public InvalidInterval() {
         super("Current time is not within the intake interval");
     }
 }

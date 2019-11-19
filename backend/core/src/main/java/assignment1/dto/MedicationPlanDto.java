@@ -71,4 +71,17 @@ public class MedicationPlanDto implements Serializable {
     public void setPatientDto(PatientDto patientDto) {
         this.patientDto = patientDto;
     }
+
+    @Override
+    public String toString() {
+        return "MedicationPlanDto{" +
+                "id=" + id +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", intakeInterval=" + intakeInterval +
+                ", doctorDto=" + doctorDto +
+                ", drugsList=" + drugsList +
+                ", patientDto=" + patientDto +
+                '}';
+    }
 }

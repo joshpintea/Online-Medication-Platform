@@ -4,9 +4,10 @@ import assignment1.dto.MedicationPlanDto;
 import assignment1.dto.mapper.MedicationPlanMapper;
 import assignment1.entities.MedicationPlan;
 import assignment1.entities.MedicationPlanTaken;
-import assignment1.exception.IncorrectInterval;
+import assignment1.exception.InvalidInterval;
 import assignment1.repository.MedicationPlanRepository;
 import assignment1.repository.MedicationPlanTakenRepository;
+import javafx.util.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -58,18 +59,31 @@ public class PillDispenserImpl implements PillDispenser {
     }
 
     @Override
-    public MedicationPlanDto takeMedication(MedicationPlanDto medicationPlanDto) throws IncorrectInterval {
+    public MedicationPlanDto takeMedication(MedicationPlanDto medicationPlanDto, Pair<Integer, Integer> medicationPlanInterval) throws InvalidInterval {
         java.util.Date currentDate = new java.util.Date();
 
         Integer hour = currentDate.getHours();
         MedicationPlan medicationPlan = this.medicationPlanRepository.getOne(medicationPlanDto.getId());
 
-
-        // allow to take medication only on even intervals generated with the intake interval
         Integer intakeInterval = medicationPlan.getIntakeInterval();
-        if ((hour / intakeInterval) % 2 == 1) {
-            throw new IncorrectInterval();
+//        List<Pair<Integer, Integer>> intervals = computeIntakeIntervals(intakeInterval);
+
+        if (hour < medicationPlanInterval.getKey() || hour > medicationPlanInterval.getValue()) {
+            throw new InvalidInterval();
         }
+
+//        boolean validIntakeInterval = false;
+//
+//        for (Pair<Integer, Integer> interval: intervals) {
+//            if (hour >= interval.getKey() && hour <= interval.getValue()) {
+//                validIntakeInterval = true;
+//                break;
+//            }
+//        }
+//
+//        if (!validIntakeInterval) {
+//            throw new InvalidInterval();
+//        }
 
 
         MedicationPlanTaken medicationPlanTaken = new MedicationPlanTaken(
@@ -86,5 +100,29 @@ public class PillDispenserImpl implements PillDispenser {
     @Override
     public void patientDidNotTakeMedication(MedicationPlanDto medicationPlanDto) {
         this.logger.info(medicationPlanDto.getPatientDto().getUsername() + " did not take his medication at the prescribed time.");
+    }
+
+    private List<Pair<Integer, Integer>> computeIntakeIntervals(Integer intakeInterval) {
+        java.util.Date currentDate = new java.util.Date();
+        int hour = currentDate.getHours();
+
+        List<Pair<Integer, Integer>> intakeIntervals = new ArrayList<>();
+        for (int i = 0; i < 24 / intakeInterval + 1; i++) {
+            if (i % 2 == 0) {
+                int start = i * intakeInterval;
+                int end = (i+1) * intakeInterval - 1;
+                if (start >=24 || hour > end) {
+                    break;
+                }
+
+                if (end >= 24) {
+                    end = 23;
+                }
+
+                intakeIntervals.add(new Pair<>(start, end));
+            }
+        }
+
+        return intakeIntervals;
     }
 }

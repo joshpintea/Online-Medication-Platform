@@ -44,4 +44,14 @@ public class DrugDto implements Serializable {
     public void setDosage(Long dosage) {
         this.dosage = dosage;
     }
+
+    @Override
+    public String toString() {
+        return "DrugDto{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", dosage=" + dosage +
+                ", sideEffects=" + sideEffects +
+                '}';
+    }
 }

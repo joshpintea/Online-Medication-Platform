@@ -1,7 +1,9 @@
 package assignment3.rmiclient.config;
 
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -11,10 +13,10 @@ import java.util.Properties;
 @Configuration
 public class PersistenceProperties {
 
-    private Properties properties;
-
-    public PersistenceProperties() throws IOException {
-        this.properties = new Properties();
+    @Bean
+    @Primary
+    public Properties loadFileProperties() throws IOException {
+        Properties properties = new Properties();
         String propFileName= "persistence.properties";
 
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
@@ -25,7 +27,6 @@ public class PersistenceProperties {
 
         properties.load(inputStream);
 
-        System.out.println(properties.getProperty("patient_id"));
+        return properties;
     }
-
 }

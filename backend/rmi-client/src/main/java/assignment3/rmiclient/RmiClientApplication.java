@@ -1,12 +1,13 @@
 package assignment3.rmiclient;
 
-import assignment1.service.pildispenser.PillDispenser;
 import assignment3.rmiclient.presentation.View;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
+@EnableScheduling
 public class RmiClientApplication {
 
     public static void main(String[] args) {
