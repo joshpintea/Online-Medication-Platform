@@ -1,8 +1,8 @@
 package assignment3.rmiclient.presentation.window;
 
 import assignment1.dto.DrugDto;
+import assignment1.dto.IntakeInterval;
 import assignment1.dto.MedicationPlanDto;
-import javafx.util.Pair;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,11 +10,11 @@ import java.awt.event.ActionListener;
 
 public class MedicationPlanComponent extends JPanel {
 
-    private final Pair<Integer, Integer> interval;
+    private IntakeInterval interval;
     private MedicationPlanDto medicationPlanDto;
     private JButton takeMedications = new JButton("Take medications");
 
-    public MedicationPlanComponent(MedicationPlanDto medicationPlanDto, Pair<Integer, Integer> interval) {
+    public MedicationPlanComponent(MedicationPlanDto medicationPlanDto, IntakeInterval interval) {
         this.medicationPlanDto = medicationPlanDto;
         this.interval = interval;
         this.initialize();
@@ -37,7 +37,7 @@ public class MedicationPlanComponent extends JPanel {
         this.add(new JLabel("Start date: " + this.medicationPlanDto.getStartDate()));
         this.add(new JLabel("End date: " + this.medicationPlanDto.getStartDate()));
         this.add(new JLabel("List of medications: " + medicationsListAsString.toString()));
-        this.add(new JLabel("Interval: " + this.interval));
+        this.add(new JLabel("Interval: " + this.interval.getStartHour() + "-" + this.interval.getEndHour()));
 
         this.add(takeMedications);
     }

@@ -110,7 +110,7 @@ class MedicationPlanForm extends React.Component {
             response => {
                 this.setState({
                     success: 'Medication plan created',
-                    intakeInterval: 0,
+                    intakeIntervalPeriod: 0,
                     startDate: '',
                     endDate: '',
                     drugsSelected: [],

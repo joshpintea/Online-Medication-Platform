@@ -30,8 +30,8 @@ public class MedicationPlan extends BaseEntity {
     @Column(name = "end_date")
     private Date endDate;
 
-    @Column(name = "intake_interval")
-    private Integer intakeInterval;
+    @Column(name = "intake_interval_period")
+    private Integer intakeIntervalPeriod;
 
     public MedicationPlan() {
     }
@@ -76,11 +76,11 @@ public class MedicationPlan extends BaseEntity {
         this.endDate = endDate;
     }
 
-    public Integer getIntakeInterval() {
-        return intakeInterval;
+    public Integer getIntakeIntervalPeriod() {
+        return intakeIntervalPeriod;
     }
 
-    public void setIntakeInterval(Integer intakeInterval) {
-        this.intakeInterval = intakeInterval;
+    public void setIntakeIntervalPeriod(Integer intakeIntervalPeriod) {
+        this.intakeIntervalPeriod = intakeIntervalPeriod;
     }
 }

@@ -14,18 +14,24 @@ public class MedicationPlanTaken extends BaseEntity {
     @Column(name="day")
     private Date date;
 
-
     @Column(name="hour")
     private Integer hour;
 
+    @Column(name="intake_interval_start")
+    private Integer intakeIntervalStart;
+
+    @Column(name="intake_interval_end")
+    private Integer intakeIntervalEnd;
 
     public MedicationPlanTaken() {
     }
 
-    public MedicationPlanTaken(MedicationPlan medicationPlan, Date date, Integer hour) {
+    public MedicationPlanTaken(MedicationPlan medicationPlan, Date date, Integer hour, Integer intakeIntervalStart, Integer intakeIntervalEnd) {
         this.medicationPlan = medicationPlan;
         this.date = date;
         this.hour = hour;
+        this.intakeIntervalEnd = intakeIntervalEnd;
+        this.intakeIntervalStart = intakeIntervalStart;
     }
 
     public MedicationPlan getMedicationPlan() {
@@ -50,5 +56,21 @@ public class MedicationPlanTaken extends BaseEntity {
 
     public void setHour(Integer hour) {
         this.hour = hour;
+    }
+
+    public Integer getIntakeIntervalStart() {
+        return intakeIntervalStart;
+    }
+
+    public void setIntakeIntervalStart(Integer intakeIntervalStart) {
+        this.intakeIntervalStart = intakeIntervalStart;
+    }
+
+    public Integer getIntakeIntervalEnd() {
+        return intakeIntervalEnd;
+    }
+
+    public void setIntakeIntervalEnd(Integer intakeIntervalEnd) {
+        this.intakeIntervalEnd = intakeIntervalEnd;
     }
 }

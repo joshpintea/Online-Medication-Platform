@@ -16,7 +16,7 @@ public class MedicationPlanMapper {
                                 .collect(Collectors.toSet()));
         medicationPlan.setEndDate(medicationPlanDto.getEndDate());
         medicationPlan.setStartDate(medicationPlanDto.getStartDate());
-        medicationPlan.setIntakeInterval(medicationPlanDto.getIntakeInterval());
+        medicationPlan.setIntakeIntervalPeriod(medicationPlanDto.getIntakeInterval());
         medicationPlan.setDoctor(DoctorMapper.convertToEntity(medicationPlanDto.getDoctorDto()));
         medicationPlan.setPatient(PatientMapper.convertToEntity(medicationPlanDto.getPatientDto()));
 
@@ -28,7 +28,7 @@ public class MedicationPlanMapper {
         medicationPlanDto.setId(medicationPlan.getId());
         medicationPlanDto.setStartDate(medicationPlan.getStartDate());
         medicationPlanDto.setEndDate(medicationPlan.getEndDate());
-        medicationPlanDto.setIntakeInterval(medicationPlan.getIntakeInterval());
+        medicationPlanDto.setIntakeInterval(medicationPlan.getIntakeIntervalPeriod());
         medicationPlanDto.setDoctorDto(DoctorMapper.convertToDto(medicationPlan.getDoctor()));
         medicationPlanDto.setPatientDto(PatientMapper.convertToDto(medicationPlan.getPatient()));
         medicationPlanDto.setDrugsList(

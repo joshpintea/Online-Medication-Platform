@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b160175-de6c-43c3-8cbe-03377fc7358b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/service/pildispenser/PillDispenserImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/service/pildispenser/PillDispenserImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/rmi-client/src/main/java/assignment3/rmiclient/RmiClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/rmi-client/src/main/java/assignment3/rmiclient/RmiClientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/config/RMIConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/config/RMIConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/dto/mapper/MedicationPlanMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/dto/mapper/MedicationPlanMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/service/pildispenser/PillDispenser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/service/pildispenser/PillDispenserImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/resources/persistence.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/resources/persistence.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/MedicationPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/MedicationPlan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/MedicationPlanTaken.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/entities/src/main/java/assignment1/entities/MedicationPlanTaken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/rmi-client/src/main/java/assignment3/rmiclient/config/RmiProxyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/rmi-client/src/main/java/assignment3/rmiclient/config/RmiProxyConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/rmi-client/src/main/java/assignment3/rmiclient/presentation/controller/MedicationPlanWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/rmi-client/src/main/java/assignment3/rmiclient/presentation/controller/MedicationPlanWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/rmi-client/src/main/java/assignment3/rmiclient/presentation/window/MedicationPlanComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/rmi-client/src/main/java/assignment3/rmiclient/presentation/window/MedicationPlanComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MedicationPlan/MedicationPlanForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MedicationPlan/MedicationPlanForm.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,27 +26,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DoctorApp/ModelComponent/UpdateModal/BaseUpdateModel.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DoctorApp/ModelComponent/ModelCrudComponent.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1780">
-              <caret line="91" column="54" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App/App.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="440">
@@ -49,11 +37,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CaregiverApp/ActivityComponent.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
               <caret line="21" column="75" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/service/doctor.service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/MedicationPlan/MedicationPlanForm.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="569">
+              <caret line="114" column="32" lean-forward="true" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -134,6 +146,7 @@
       <find>deleteOb</find>
       <find>isEmp</find>
       <find>cart</find>
+      <find>doctorSer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -169,7 +182,6 @@
         <option value="$PROJECT_DIR$/src/util/index.js" />
         <option value="$PROJECT_DIR$/src/MedicationPlan/MedicationPlanMiniature.jsx" />
         <option value="$PROJECT_DIR$/src/DoctorApp/ModelComponent/ModelCrudComponent.jsx" />
-        <option value="$PROJECT_DIR$/src/MedicationPlan/MedicationPlanForm.jsx" />
         <option value="$PROJECT_DIR$/src/DoctorApp/ModelComponent/CreateForm/PatientForm.js" />
         <option value="$PROJECT_DIR$/src/DoctorApp/ModelComponent/CreateForm/CaregiverForm.jsx" />
         <option value="$PROJECT_DIR$/src/util/util.js" />
@@ -193,6 +205,7 @@
         <option value="$PROJECT_DIR$/src/NavBar/CaregiverNavbar.jsx" />
         <option value="$PROJECT_DIR$/src/NavBar/CaregiverNavBar.jsx" />
         <option value="$PROJECT_DIR$/src/CaregiverApp/CaregiverNotificationPage.jsx" />
+        <option value="$PROJECT_DIR$/src/MedicationPlan/MedicationPlanForm.jsx" />
       </list>
     </option>
   </component>
@@ -393,16 +406,17 @@
       <workItem from="1574002291541" duration="623000" />
       <workItem from="1574038090999" duration="12000" />
       <workItem from="1574094303650" duration="602000" />
+      <workItem from="1574208056960" duration="281000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62116000" />
+    <option name="totallyTimeSpent" value="62397000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18229716" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18229716" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -416,8 +430,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49947312" weight="0.13217768" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50790304" side_tool="true" visible="true" weight="0.1414791" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49209693" visible="true" weight="0.1414791" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50842994" side_tool="true" visible="true" weight="0.29903537" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4915701" visible="true" weight="0.29903537" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -505,16 +519,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/doctor.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/service/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -580,16 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="758" column="4" selection-start-line="758" selection-start-column="4" selection-end-line="758" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MedicationPlan/MedicationPlanForm.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -872,6 +866,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="21" column="75" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/doctor.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MedicationPlan/MedicationPlanForm.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="114" column="32" lean-forward="true" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

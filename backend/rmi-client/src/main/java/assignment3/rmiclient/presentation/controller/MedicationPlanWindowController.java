@@ -1,7 +1,9 @@
 package assignment3.rmiclient.presentation.controller;
 
+import assignment1.dto.IntakeInterval;
 import assignment1.dto.MedicationPlanDto;
-import assignment1.service.pildispenser.PillDispenser;
+import assignment1.dto.MedicationPlanInterval;
+import assignment1.service.pildispenser.PillDispenserService;
 import assignment3.rmiclient.presentation.View;
 import assignment3.rmiclient.presentation.window.MedicationPlanComponent;
 import assignment3.rmiclient.presentation.window.MedicationPlanWindow;
@@ -18,18 +20,18 @@ import java.util.Properties;
 @Component
 public class MedicationPlanWindowController {
 
-    private final String cronTask = "0 5 0 * * *";
+    private final String cronTask = "0 0 0 * * *"; // on each day at 0 AM
 
-    private PillDispenser pillDispenser;
+    private PillDispenserService pillDispenserService;
     private MedicationPlanWindow medicationPlanWindow;
     private Properties properties;
     private View view;
     private Long patientId;
 
-    private List<Pair<MedicationPlanDto, Pair<Integer, Integer>>> medicationsPlan;
+    private List<Pair<MedicationPlanDto, IntakeInterval>> medicationsPlan;
 
-    public MedicationPlanWindowController(PillDispenser pillDispenser, MedicationPlanWindow medicationPlanWindow, Properties properties, View view) {
-        this.pillDispenser = pillDispenser;
+    public MedicationPlanWindowController(PillDispenserService pillDispenserService, MedicationPlanWindow medicationPlanWindow, Properties properties, View view) {
+        this.pillDispenserService = pillDispenserService;
         this.medicationPlanWindow = medicationPlanWindow;
         this.properties = properties;
         this.view = view;
@@ -41,7 +43,7 @@ public class MedicationPlanWindowController {
     private void updateWindow() {
         this.medicationPlanWindow.clearWindow();
 
-        for (Pair<MedicationPlanDto, Pair<Integer, Integer>> medicationPlan: this.medicationsPlan) {
+        for (Pair<MedicationPlanDto, IntakeInterval> medicationPlan: this.medicationsPlan) {
                 MedicationPlanComponent medicationPlanComponent = new MedicationPlanComponent(medicationPlan.getKey(), medicationPlan.getValue());
                 medicationPlanComponent.addActionListener(new TakeMedication(medicationPlan.getKey(), medicationPlan.getValue()));
 
@@ -49,40 +51,21 @@ public class MedicationPlanWindowController {
         }
     }
 
-    private List<Pair<Integer, Integer>> computeIntakeIntervals(MedicationPlanDto medicationPlanDto) {
-        java.util.Date currentDate = new java.util.Date();
-        int hour = currentDate.getHours();
-
-        List<Pair<Integer, Integer>> intakeIntervals = new ArrayList<>();
-        for (int i = 0; i < 24 / medicationPlanDto.getIntakeInterval() + 1; i++) {
-            if (i % 2 == 0) {
-                int start = i * medicationPlanDto.getIntakeInterval();
-                int end = (i+1) * medicationPlanDto.getIntakeInterval() - 1;
-                if (start >=24 || hour > end) {
-                    break;
-                }
-
-                if (end >= 24) {
-                    end = 23;
-                }
-
-                intakeIntervals.add(new Pair<>(start, end));
-            }
-        }
-
-        return intakeIntervals;
-    }
-
     @Scheduled(cron = cronTask)
     private void getMedicationPlans() {
-        List<MedicationPlanDto> medicationPlanDtos = this.pillDispenser.getNotTakenMedicationPlans(this.patientId);
+        List<MedicationPlanInterval> notTakenMedicationPlans = new ArrayList<>();
+        try {
+            notTakenMedicationPlans = this.pillDispenserService.getNotTakenMedicationPlans(this.patientId);
+        } catch (Exception ex) {
+            this.view.showError(ex.getMessage(), "error");
+            System.exit(-1);
+        }
 
         this.medicationsPlan = new ArrayList<>();
-        for (MedicationPlanDto medicationPlan: medicationPlanDtos) {
-            List<Pair<Integer, Integer>> intakeIntervals = this.computeIntakeIntervals(medicationPlan);
+        for (MedicationPlanInterval medicationPlanInterval: notTakenMedicationPlans) {
 
-            for (Pair<Integer, Integer> interval: intakeIntervals) {
-                this.medicationsPlan.add(new Pair<>(medicationPlan, interval));
+            for (IntakeInterval intakeInterval: medicationPlanInterval.getIntakeIntervals()) {
+                this.medicationsPlan.add(new Pair<>(medicationPlanInterval.getMedicationPlanDto(), intakeInterval));
             }
 
         }
@@ -94,12 +77,12 @@ public class MedicationPlanWindowController {
         java.util.Date currentDate = new java.util.Date();
         int hour = currentDate.getHours();
 
-        List<Pair<MedicationPlanDto, Pair<Integer, Integer>>> newMedicationsPlan = new ArrayList<>();
-        for (Pair<MedicationPlanDto, Pair<Integer, Integer>> medicationPlanAndInterval: this.medicationsPlan) {
-            Pair<Integer, Integer> interval = medicationPlanAndInterval.getValue();
+        List<Pair<MedicationPlanDto, IntakeInterval>> newMedicationsPlan = new ArrayList<>();
+        for (Pair<MedicationPlanDto, IntakeInterval> medicationPlanAndInterval: this.medicationsPlan) {
+            IntakeInterval interval = medicationPlanAndInterval.getValue();
 
-            if (hour > interval.getValue()) {
-                this.pillDispenser.getNotTakenMedicationPlans(medicationPlanAndInterval.getKey().getPatientDto().getId());
+            if (hour > interval.getEndHour()) {
+                this.pillDispenserService.patientDidNotTakeMedication(medicationPlanAndInterval.getKey());
                 continue;
             }
 
@@ -112,9 +95,9 @@ public class MedicationPlanWindowController {
 
     private class TakeMedication implements ActionListener {
         private MedicationPlanDto medicationPlanDto;
-        private Pair<Integer, Integer> interval;
+        private IntakeInterval interval;
 
-        public TakeMedication(MedicationPlanDto medicationPlanDto, Pair<Integer, Integer> interval) {
+        public TakeMedication(MedicationPlanDto medicationPlanDto, IntakeInterval interval) {
             this.medicationPlanDto = medicationPlanDto;
             this.interval = interval;
         }
@@ -123,12 +106,14 @@ public class MedicationPlanWindowController {
         public void actionPerformed(ActionEvent e) {
 
             try {
-                pillDispenser.takeMedication(medicationPlanDto, this.interval);
+                pillDispenserService.takeMedication(medicationPlanDto, this.interval);
 
                 // remove medication plan with the given interval
-                List<Pair<MedicationPlanDto, Pair<Integer, Integer>>> newMedicationsPlan = new ArrayList<>();
-                for (Pair<MedicationPlanDto, Pair<Integer, Integer>> medicationPlanAndInterval: medicationsPlan) {
-                    if (!(medicationPlanAndInterval.getKey().getId().equals(medicationPlanDto.getId()) && this.interval == medicationPlanAndInterval.getValue())) {
+                List<Pair<MedicationPlanDto, IntakeInterval>> newMedicationsPlan = new ArrayList<>();
+                for (Pair<MedicationPlanDto, IntakeInterval> medicationPlanAndInterval: medicationsPlan) {
+                    if (!(medicationPlanAndInterval.getKey().getId().equals(medicationPlanDto.getId())
+                            && this.interval.getStartHour() == medicationPlanAndInterval.getValue().getStartHour()
+                            && this.interval.getEndHour() == medicationPlanAndInterval.getValue().getEndHour())) {
                         newMedicationsPlan.add(medicationPlanAndInterval);
                     }
                 }
@@ -140,7 +125,6 @@ public class MedicationPlanWindowController {
             } catch (Exception ex) {
                 view.showError(ex.getMessage(), "Error");
             }
-            System.out.println(medicationPlanDto.getId() + ", " + this.interval);
         }
     }
 }
