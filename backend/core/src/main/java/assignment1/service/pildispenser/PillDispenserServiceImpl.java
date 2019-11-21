@@ -138,7 +138,7 @@ public class PillDispenserServiceImpl implements PillDispenserService {
                 int start = i * intakeIntervalPeriod;
                 int end = (i + 1) * intakeIntervalPeriod - 1;
                 if (start >= 24 || hour > end) {
-                    break;
+                    continue;
                 }
 
                 if (end >= 24) {
