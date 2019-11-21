@@ -25,6 +25,11 @@ Change the name of database, user and password from this file:
     "backend\core\src\main\resources\persistence.properties"
  
  For first run of the backend app set also the "hibernate.hbm2ddl.auto" field from "none" to "create" and then change it back. In this way, the database and all the tables are created. 
+
+
+# Rmi client 
+Change the patient id from the config file:
+"backend\rmi-client\src\main\resources\persistence.properties"
  
  
  # Producer dependencies
@@ -49,7 +54,7 @@ Change the name of database, user and password from this file:
    
         npm start
         
-                                         
+ - start the rmi-client app.                                         
  
  
  
