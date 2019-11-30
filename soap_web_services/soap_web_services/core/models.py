@@ -45,6 +45,16 @@ class Activity(models.Model):
         return '%s %s' % (self.id, self.activity_lavel)
 
 
+class ActivityRecommendation(models.Model):
+    id = models.AutoField(primary_key=True)
+    recommendation = models.CharField(max_length=255, blank=True, null=True)
+    activity = models.ForeignKey(Activity, models.DO_NOTHING, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'activity_recommendation'
+
+
 class Caregiver(models.Model):
     id = models.ForeignKey('User', models.DO_NOTHING, db_column='id', primary_key=True)
 

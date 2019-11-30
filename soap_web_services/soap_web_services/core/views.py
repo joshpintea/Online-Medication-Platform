@@ -1,8 +1,9 @@
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render
 
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
-from spyne import ResourceNotFoundError
+from spyne import ResourceNotFoundError, Fault
 
 from spyne.server.django import DjangoApplication
 from spyne.model.primitive import Unicode, Integer, Long, Date, Boolean
@@ -13,7 +14,7 @@ from spyne.decorator import rpc
 from spyne.service import Service
 from spyne.util.django import DjangoComplexModel
 
-from soap_web_services.core.models import Activity, MedicationPlan, MedicationPlanInterval
+from soap_web_services.core.models import Activity, MedicationPlan, MedicationPlanInterval, ActivityRecommendation
 
 
 class ActivityModel(DjangoComplexModel):
@@ -34,6 +35,11 @@ class MedicationPlanIntervalModel(DjangoComplexModel):
 class MedicationPlanNotObeyed(ComplexModel):
     medication_plan = MedicationPlanModel
     intake_intervals = Array(MedicationPlanIntervalModel)
+
+
+class ActivityRecommendationModel(DjangoComplexModel):
+    class Attributes(DjangoComplexModel.Attributes):
+        django_model = ActivityRecommendation
 
 
 class HelloWorldService(Service):
@@ -68,6 +74,33 @@ class ActivityService(Service):
             return activity
         except Exception as ex:
             raise ResourceNotFoundError('Activity %s not found' % activity_id)
+
+    @rpc(Long, Unicode)
+    def add_recommendation(self, activity_id, recommendation):
+        try:
+            activity = Activity.objects.get(pk=activity_id)
+            if type(activity.is_violated) == bytes:
+                activity.is_violated = bool.from_bytes(activity.is_violated, "big")
+
+            if type(activity.is_normal) == bytes:
+                activity.is_normal = bool.from_bytes(activity.is_normal, "big")
+
+            if activity.is_normal:
+                raise Exception("Activity is labeled as normal")
+
+            latest_activity = ActivityRecommendation.objects.latest('id')
+
+            latest_id = latest_activity.id + 1
+
+            activity_recommendation = ActivityRecommendation()
+            activity_recommendation.id = latest_id
+            activity_recommendation.activity_id = activity.id
+            activity_recommendation.recommendation = recommendation
+            activity_recommendation.save(force_insert=True)
+        except ObjectDoesNotExist as ex:
+            raise ResourceNotFoundError('Activity %s not found' % activity_id)
+        except Exception as ex:
+            raise Fault(faultstring=str(ex))
 
 
 class MedicationPlanService(Service):
