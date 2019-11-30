@@ -27,6 +27,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
                 .antMatchers(EndpointsUtil.CAREGIVER).hasRole(UserRole.ROLE_DOCTOR.withoutRoleKey())
                 .antMatchers("/oauth/**").permitAll()
                 .antMatchers(EndpointsUtil.USER + "/**").permitAll()
+                .antMatchers("/test").permitAll()
                 .antMatchers("/stomp").permitAll()
                 .antMatchers("/**").hasRole(UserRole.ROLE_DOCTOR.withoutRoleKey())
                 .and().csrf().disable();

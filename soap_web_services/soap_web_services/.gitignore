@@ -1,0 +1,5 @@
+soap_web_services/__pycache__/
+soap_web_services/core/__pycache__/
+__pycache__
+.idea
+core/__pycache__

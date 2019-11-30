@@ -3,16 +3,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>jp.asg2</groupId>
+        <groupId>assignment1</groupId>
         <artifactId>parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>parent</relativePath> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>jp</groupId>
-    <artifactId>asg2</artifactId>
+    <groupId>project</groupId>
+    <artifactId>assignment1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <description>asg2</description>
+    <description>assignment1</description>
 
     <properties>
         <java.version>1.8</java.version>

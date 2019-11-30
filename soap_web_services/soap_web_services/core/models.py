@@ -9,6 +9,7 @@ from django.db import models
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
+from django.utils.encoding import python_2_unicode_compatible
 
 
 class User(models.Model):
@@ -26,6 +27,7 @@ class User(models.Model):
         db_table = 'user'
 
 
+@python_2_unicode_compatible
 class Activity(models.Model):
     id = models.BigIntegerField(primary_key=True)
     activity_lavel = models.CharField(max_length=255, blank=True, null=True)
@@ -37,6 +39,9 @@ class Activity(models.Model):
     class Meta:
         managed = False
         db_table = 'activity'
+
+    def __str__(self):
+        return '%s' % self.id
 
 
 class Caregiver(models.Model):

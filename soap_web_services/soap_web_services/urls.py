@@ -13,9 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
+from django.conf.urls import url
+from spyne.protocol.soap import Soap11
+from spyne.server.django import DjangoView
+
+from soap_web_services.core.views import app, HelloWorldService
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url(r'^doctor_wsdl/', DjangoView.as_view(application=app)),
 ]
