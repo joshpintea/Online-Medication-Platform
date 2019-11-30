@@ -11,6 +11,7 @@ import java.util.List;
 public interface PillDispenserService {
     List<MedicationPlanInterval> getNotTakenMedicationPlans(Long idPatient) throws PatientNotFound;
     MedicationPlanDto takeMedication(MedicationPlanDto medicationPlanDto, IntakeInterval intakeInterval) throws InvalidInterval;
-    void patientDidNotTakeMedication(MedicationPlanDto medicationPlanDto);
+    void patientDidNotTakeMedicationOnTime(MedicationPlanDto medicationPlanDto);
+    void patientDidNotTakenMedicationOnTime(MedicationPlanDto medicationPlanDto, IntakeInterval intakeInterval);
 
 }

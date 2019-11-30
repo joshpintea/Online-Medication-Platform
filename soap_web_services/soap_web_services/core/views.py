@@ -31,8 +31,8 @@ class HelloWorldService(Service):
 class ActivityService(Service):
     @rpc(Long, Date, _returns=Iterable(ActivityModel))
     def get_activities_by_patient_id(self, patient_id, date):
-        activities = Activity.objects.filter(patient_id=patient_id)
-        return activities
+        activities_per_day = Activity.objects.filter(patient_id=patient_id, start_date__contains=date)
+        return activities_per_day
 
 
 app = Application([HelloWorldService, ActivityService],

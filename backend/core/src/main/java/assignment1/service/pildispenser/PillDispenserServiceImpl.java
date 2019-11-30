@@ -2,15 +2,14 @@ package assignment1.service.pildispenser;
 
 import assignment1.dto.IntakeInterval;
 import assignment1.dto.MedicationPlanDto;
-import assignment1.dto.MedicationPlanInterval;
 import assignment1.dto.mapper.MedicationPlanMapper;
 import assignment1.entities.MedicationPlan;
-import assignment1.entities.MedicationPlanTaken;
+import assignment1.entities.MedicationPlanInterval;
 import assignment1.entities.Patient;
 import assignment1.exception.InvalidInterval;
 import assignment1.exception.PatientNotFound;
 import assignment1.repository.MedicationPlanRepository;
-import assignment1.repository.MedicationPlanTakenRepository;
+import assignment1.repository.MedicationPlanIntervalRepository;
 import assignment1.repository.PatientRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,21 +25,21 @@ import java.util.Optional;
 @Transactional
 public class PillDispenserServiceImpl implements PillDispenserService {
 
-    private MedicationPlanTakenRepository medicationPlanTakenRepository;
+    private MedicationPlanIntervalRepository medicationPlanIntervalRepository;
     private MedicationPlanRepository medicationPlanRepository;
     private PatientRepository patientRepository;
     private Logger logger = LoggerFactory.getLogger(PillDispenserServiceImpl.class);
 
-    public PillDispenserServiceImpl(MedicationPlanTakenRepository medicationPlanTakenRepository,
+    public PillDispenserServiceImpl(MedicationPlanIntervalRepository medicationPlanIntervalRepository,
                                     MedicationPlanRepository medicationPlanRepository,
                                     PatientRepository patientRepository) {
-        this.medicationPlanTakenRepository = medicationPlanTakenRepository;
+        this.medicationPlanIntervalRepository = medicationPlanIntervalRepository;
         this.medicationPlanRepository = medicationPlanRepository;
         this.patientRepository = patientRepository;
     }
 
     @Override
-    public List<MedicationPlanInterval> getNotTakenMedicationPlans(Long idPatient) throws PatientNotFound {
+    public List<assignment1.dto.MedicationPlanInterval> getNotTakenMedicationPlans(Long idPatient) throws PatientNotFound {
         /**
          * Return a list of medications plan for the given patient
          * with his intake intervals generated after the intakeIntervalPeriod for the current day.
@@ -57,18 +56,18 @@ public class PillDispenserServiceImpl implements PillDispenserService {
             }
         }
 
-        List<MedicationPlanInterval> medicationsPlanNotTaken = new ArrayList<>();
+        List<assignment1.dto.MedicationPlanInterval> medicationsPlanNotTaken = new ArrayList<>();
 
         for (MedicationPlan medicationPlan : medicationPlans) {
-            List<MedicationPlanTaken> medicationPlanTakens = this.medicationPlanTakenRepository.getAllByMedicationPlan_IdAndDate(medicationPlan.getId(), today);
+            List<MedicationPlanInterval> medicationPlanIntervals = this.medicationPlanIntervalRepository.getAllByMedicationPlan_IdAndDate(medicationPlan.getId(), today);
             List<IntakeInterval> intakeIntervals = this.computeIntakeIntervals(medicationPlan.getIntakeIntervalPeriod());
 
             MedicationPlanDto medicationPlanDto = MedicationPlanMapper.convertToDto(medicationPlan);
             List<IntakeInterval> takenIntervals = new ArrayList<>();
 
-            for (MedicationPlanTaken medicationPlanTaken : medicationPlanTakens) {
-                takenIntervals.add(new IntakeInterval(medicationPlanTaken.getIntakeIntervalStart(),
-                        medicationPlanTaken.getIntakeIntervalEnd()));
+            for (MedicationPlanInterval medicationPlanInterval : medicationPlanIntervals) {
+                takenIntervals.add(new IntakeInterval(medicationPlanInterval.getIntakeIntervalStart(),
+                        medicationPlanInterval.getIntakeIntervalEnd()));
             }
 
             List<IntakeInterval> toBeTaken = new ArrayList<>();
@@ -88,7 +87,7 @@ public class PillDispenserServiceImpl implements PillDispenserService {
             }
 
             if (toBeTaken.size() > 0) {
-                medicationsPlanNotTaken.add(new MedicationPlanInterval(medicationPlanDto, toBeTaken));
+                medicationsPlanNotTaken.add(new assignment1.dto.MedicationPlanInterval(medicationPlanDto, toBeTaken));
             }
 
         }
@@ -109,23 +108,41 @@ public class PillDispenserServiceImpl implements PillDispenserService {
 
         MedicationPlan medicationPlan = this.medicationPlanRepository.getOne(medicationPlanDto.getId());
 
-        MedicationPlanTaken medicationPlanTaken = new MedicationPlanTaken(
+        MedicationPlanInterval medicationPlanInterval = new MedicationPlanInterval(
                 medicationPlan,
                 new Date(currentDate.getTime()),
                 hour,
                 intakeInterval.getStartHour(),
-                intakeInterval.getEndHour()
+                intakeInterval.getEndHour(),
+                true
         );
 
 
-        this.medicationPlanTakenRepository.save(medicationPlanTaken);
+        this.medicationPlanIntervalRepository.save(medicationPlanInterval);
         return medicationPlanDto;
     }
 
 
     @Override
-    public void patientDidNotTakeMedication(MedicationPlanDto medicationPlanDto) {
+    public void patientDidNotTakeMedicationOnTime(MedicationPlanDto medicationPlanDto) {
         this.logger.info(medicationPlanDto.getPatientDto().getUsername() + " did not take his medication at the prescribed time.");
+    }
+
+    @Override
+    public void patientDidNotTakenMedicationOnTime(MedicationPlanDto medicationPlanDto, IntakeInterval intakeInterval) {
+        MedicationPlan medicationPlan = this.medicationPlanRepository.getOne(medicationPlanDto.getId());
+        java.util.Date currentDate = new java.util.Date();
+
+        MedicationPlanInterval medicationPlanInterval = new MedicationPlanInterval(
+                medicationPlan,
+                new Date(currentDate.getTime()),
+                currentDate.getHours(),
+                intakeInterval.getStartHour(),
+                intakeInterval.getEndHour(),
+                false
+        );
+
+        this.medicationPlanIntervalRepository.save(medicationPlanInterval);
     }
 
     private List<IntakeInterval> computeIntakeIntervals(Integer intakeIntervalPeriod) {

@@ -119,17 +119,18 @@ class MedicationPlan(models.Model):
         db_table = 'medication_plan'
 
 
-class MedicationPlanTaken(models.Model):
+class MedicationPlanInterval(models.Model):
     id = models.BigIntegerField(primary_key=True)
     day = models.DateField(blank=True, null=True)
     hour = models.IntegerField(blank=True, null=True)
     intake_interval_end = models.IntegerField(blank=True, null=True)
     intake_interval_start = models.IntegerField(blank=True, null=True)
+    taken_on_time = models.BooleanField(blank=True, null=True)
     medication_plan = models.ForeignKey(MedicationPlan, models.DO_NOTHING, blank=True, null=True)
 
     class Meta:
         managed = False
-        db_table = 'medication_plan_taken'
+        db_table = 'medication_plan_interval'
 
 
 class MedicationPlanToDrugs(models.Model):

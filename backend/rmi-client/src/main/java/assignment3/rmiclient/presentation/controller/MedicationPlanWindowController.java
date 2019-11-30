@@ -82,7 +82,8 @@ public class MedicationPlanWindowController {
             IntakeInterval interval = medicationPlanAndInterval.getValue();
 
             if (hour > interval.getEndHour()) {
-                this.pillDispenserService.patientDidNotTakeMedication(medicationPlanAndInterval.getKey());
+                this.pillDispenserService.patientDidNotTakeMedicationOnTime(medicationPlanAndInterval.getKey());
+                this.pillDispenserService.patientDidNotTakenMedicationOnTime(medicationPlanAndInterval.getKey(), medicationPlanAndInterval.getValue());
                 continue;
             }
 
