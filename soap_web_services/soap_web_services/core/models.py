@@ -106,6 +106,7 @@ class HibernateSequence(models.Model):
         db_table = 'hibernate_sequence'
 
 
+@python_2_unicode_compatible
 class MedicationPlan(models.Model):
     id = models.BigIntegerField(primary_key=True)
     end_date = models.DateField(blank=True, null=True)
@@ -119,6 +120,7 @@ class MedicationPlan(models.Model):
         db_table = 'medication_plan'
 
 
+@python_2_unicode_compatible
 class MedicationPlanInterval(models.Model):
     id = models.BigIntegerField(primary_key=True)
     day = models.DateField(blank=True, null=True)
