@@ -10,16 +10,19 @@ public class ActivityViewDto implements Serializable {
     private Date startDate;
     private Date endDate;
     private String activityLabel;
+    private Boolean isViolated;
 
     public ActivityViewDto() {
     }
 
-    public ActivityViewDto(Long id, UserDto patient, Date startDate, Date endDate, String activityLabel) {
+    public ActivityViewDto(Long id, UserDto patient, Date startDate, Date endDate, String activityLabel, Boolean isViolated) {
         this.id = id;
         this.patient = patient;
         this.startDate = startDate;
         this.endDate = endDate;
         this.activityLabel = activityLabel;
+        this.isViolated = isViolated;
+
     }
 
     public UserDto getPatient() {
@@ -60,5 +63,13 @@ public class ActivityViewDto implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Boolean getViolated() {
+        return isViolated;
+    }
+
+    public void setViolated(Boolean violated) {
+        isViolated = violated;
     }
 }

@@ -20,7 +20,7 @@ import java.util.Properties;
 @Component
 public class MedicationPlanWindowController {
 
-    private final String cronTask = "0 0 0 * * *"; // on each day at 0 AM
+    private final String cronTask = "0 15 * * * *"; // "0 0 0 * * * on each day at 0 AM
 
     private PillDispenserService pillDispenserService;
     private MedicationPlanWindow medicationPlanWindow;
@@ -72,7 +72,7 @@ public class MedicationPlanWindowController {
         this.updateWindow();
     }
 
-    @Scheduled(fixedRate = 3600000) // 1000 * 60 * 60(ms) = 1h
+    @Scheduled(fixedRate = 3600000) // 1000 * 60 * 60(ms) = 1h = 3600000
     private void checkNotTakenMedication() {
         java.util.Date currentDate = new java.util.Date();
         int hour = currentDate.getHours();

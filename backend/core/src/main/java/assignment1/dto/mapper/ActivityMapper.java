@@ -10,6 +10,7 @@ public class ActivityMapper {
                 UserMapper.convertToDto(activity.getActivityPatient()),
                 activity.getStartDate(),
                 activity.getEndDate(),
-                activity.getActivityLabel());
+                activity.getActivityLabel(),
+                activity.getIsViolated());
     }
 }

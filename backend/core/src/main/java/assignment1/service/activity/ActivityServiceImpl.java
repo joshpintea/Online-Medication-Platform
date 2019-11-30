@@ -26,7 +26,7 @@ public class ActivityServiceImpl implements ActivityService {
     private PatientRepository patientRepository;
     private SimpMessagingTemplate simpMessagingTemplate;
 
-    private Logger logger= LoggerFactory.getLogger(ActivityServiceImpl.class);
+    private Logger logger = LoggerFactory.getLogger(ActivityServiceImpl.class);
 
     public ActivityServiceImpl(ActivityRepository activityRepository, PatientRepository patientRepository,
                                SimpMessagingTemplate simpleMessagingTemplate) {
@@ -69,7 +69,7 @@ public class ActivityServiceImpl implements ActivityService {
 
 
         Activity activity = new Activity(patient, activityModel.getStart(),
-                                        activityModel.getEnd(), activityModel.getActivityLabel());
+                activityModel.getEnd(), activityModel.getActivityLabel(), false);
 
         // save activity into the database
         Activity activity1 = this.activityRepository.save(activity);
@@ -82,6 +82,7 @@ public class ActivityServiceImpl implements ActivityService {
      * - the sleep period is longer than 12 hours
      * - the leaving period is longer than 12 hours
      * - the period spent in bathroom is longer than 1 hour
+     *
      * @param activity
      */
     public void checkActivityRuleAndNotifyCaregiver(Activity activity) {
@@ -101,11 +102,11 @@ public class ActivityServiceImpl implements ActivityService {
             String websocketPath = "/activity/rule_violated/" + caregiverId;
 
             this.logger.info("Activity violated: " + activity + " hours: "
-                                    + hours + " caregiver username: " + activity.getActivityPatient().getCaregiver().getUsername());
+                    + hours + " caregiver username: " + activity.getActivityPatient().getCaregiver().getUsername());
             this.simpMessagingTemplate.convertAndSend(websocketPath, ActivityMapper.convertToDto(activity));
+            activity.setIsViolated(true);
         }
     }
-
 
 
 }

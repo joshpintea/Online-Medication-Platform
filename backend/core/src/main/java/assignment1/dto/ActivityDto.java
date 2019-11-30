@@ -8,6 +8,7 @@ public class ActivityDto implements Serializable {
     private String activityLabel;
     private Date start;
     private Date end;
+    private Boolean isVioldated;
 
     public ActivityDto() {
 
@@ -18,6 +19,14 @@ public class ActivityDto implements Serializable {
         this.activityLabel = activityLabel;
         this.start = start;
         this.end = end;
+    }
+
+    public ActivityDto(Long patientId, String activityLabel, Date start, Date end, Boolean isVioldated) {
+        this.patientId = patientId;
+        this.activityLabel = activityLabel;
+        this.start = start;
+        this.end = end;
+        this.isVioldated = isVioldated;
     }
 
     public Long getPatientId() {
@@ -50,6 +59,14 @@ public class ActivityDto implements Serializable {
 
     public void setEnd(Date end) {
         this.end = end;
+    }
+
+    public Boolean getIsVioldated() {
+        return isVioldated;
+    }
+
+    public void setIsVioldated(Boolean isVioldated) {
+        this.isVioldated = isVioldated;
     }
 
     @Override

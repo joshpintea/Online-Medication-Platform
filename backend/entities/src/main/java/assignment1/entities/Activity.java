@@ -19,6 +19,9 @@ public class Activity extends BaseEntity {
     @Column(name="activity_lavel")
     private String activityLabel;
 
+    @Column(name="isViolated")
+    private Boolean isViolated;
+
     public Activity() {
     }
 
@@ -27,6 +30,14 @@ public class Activity extends BaseEntity {
         this.startDate = startDate;
         this.endDate = endDate;
         this.activityLabel = activityLabel;
+    }
+
+    public Activity(Patient activityPatient, Date startDate, Date endDate, String activityLabel, Boolean isViolated) {
+        this.activityPatient = activityPatient;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.activityLabel = activityLabel;
+        this.isViolated = isViolated;
     }
 
     public Patient getActivityPatient() {
@@ -59,6 +70,14 @@ public class Activity extends BaseEntity {
 
     public void setActivityLabel(String activityLabel) {
         this.activityLabel = activityLabel;
+    }
+
+    public Boolean getIsViolated() {
+        return isViolated;
+    }
+
+    public void setIsViolated(Boolean isViolated) {
+        this.isViolated = isViolated;
     }
 
     @Override
