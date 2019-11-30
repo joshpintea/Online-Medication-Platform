@@ -34,14 +34,15 @@ class Activity(models.Model):
     end_date = models.DateTimeField(blank=True, null=True)
     start_date = models.DateTimeField(blank=True, null=True)
     patient = models.ForeignKey('Patient', models.DO_NOTHING, blank=True, null=True)
-    is_violated = models.BooleanField(db_column='isViolated', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    is_violated = models.BooleanField(db_column='isViolated', blank=True, null=True)
+    is_normal = models.BooleanField(db_column='is_normal', blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'activity'
 
     def __str__(self):
-        return '%s' % self.id
+        return '%s %s' % (self.id, self.activity_lavel)
 
 
 class Caregiver(models.Model):

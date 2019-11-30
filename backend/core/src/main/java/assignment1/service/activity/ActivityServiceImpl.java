@@ -69,7 +69,7 @@ public class ActivityServiceImpl implements ActivityService {
 
 
         Activity activity = new Activity(patient, activityModel.getStart(),
-                activityModel.getEnd(), activityModel.getActivityLabel(), false);
+                activityModel.getEnd(), activityModel.getActivityLabel(), false, true);
 
         // save activity into the database
         Activity activity1 = this.activityRepository.save(activity);

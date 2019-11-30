@@ -2,9 +2,10 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
+from spyne import ResourceNotFoundError
 
 from spyne.server.django import DjangoApplication
-from spyne.model.primitive import Unicode, Integer, Long, Date
+from spyne.model.primitive import Unicode, Integer, Long, Date, Boolean
 from spyne.model.complex import Iterable, ComplexModel, Array
 from spyne.protocol.soap import Soap11
 from spyne.application import Application
@@ -47,7 +48,26 @@ class ActivityService(Service):
     @rpc(Long, Date, _returns=Iterable(ActivityModel))
     def get_activities_by_patient_id(self, patient_id, date):
         activities_per_day = Activity.objects.filter(patient_id=patient_id, start_date__contains=date)
+
+        for activity in activities_per_day:
+            activity.is_normal = bool.from_bytes(activity.is_normal, "big")
+            activity.is_violated = bool.from_bytes(activity.is_violated, "big")
+
         return activities_per_day
+
+    @rpc(Long, Boolean, _returns=ActivityModel)
+    def annotate_activity(self, activity_id, label):
+        try:
+            activity = Activity.objects.get(pk=activity_id)
+
+            if type(activity.is_violated) == bytes:
+                activity.is_violated = bool.from_bytes(activity.is_violated, "big")
+
+            activity.is_normal = label
+            activity.save()
+            return activity
+        except Exception as ex:
+            raise ResourceNotFoundError('Activity %s not found' % activity_id)
 
 
 class MedicationPlanService(Service):
