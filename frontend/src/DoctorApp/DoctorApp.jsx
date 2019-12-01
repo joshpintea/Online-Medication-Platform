@@ -11,6 +11,8 @@ import {sideEffectService} from "../service/sideeffect.service";
 import {CaregiverForm, DrugForm, SideEffectForm} from "./ModelComponent/CreateForm";
 import {PatientForm} from "./ModelComponent/CreateForm/PatientForm";
 import {CaregiverModal, DrugModal, PatientModal, SideEffectModal} from "./ModelComponent/UpdateModal";
+import {ActivitiesViolatedPage, ActivityHistoryPage} from "../ActivityHistory";
+import {DisobeyedMedPlanPage} from "../MedicationPlan";
 
 
 class DoctorApp extends React.Component {
@@ -21,6 +23,9 @@ class DoctorApp extends React.Component {
                 <Router>
                     <Switch>
                         <Route exact path={constants.routes.app.doctorDashboard} component={DoctorDashboard}/>
+                        <Route exacat path={constants.routes.app.activitiesHistory} component={ActivityHistoryPage}/>
+                        <Route exact path={constants.routes.app.activitiesViolated} component={ActivitiesViolatedPage}/>
+                        <Route exact path={constants.routes.app.disobeyedMedPlans} component={DisobeyedMedPlanPage}/>
                         <Route path={constants.routes.app.drugCrudUrl}
                                component={() => <ModelCrudComponent modelName={"Drug"} columns={modelsColumnsView.drug}
                                                                     service={drugService}

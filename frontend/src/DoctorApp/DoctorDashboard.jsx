@@ -29,6 +29,14 @@ class DoctorDashboard extends React.Component {
         return (
             <div>
                 <div className={"jumbotron"}>
+                    <div>
+                        <h1>Links</h1>
+                        <a  href={constants.routes.app.activitiesHistory}>View activities history for patient</a> <br/>
+                        <a  href={constants.routes.app.activitiesViolated}>View activities violated for patient</a> <br/>
+                        <a  href={constants.routes.app.disobeyedMedPlans}>View disobeyed med plans for patient</a>
+                    </div>
+                </div>
+                <div className={"jumbotron"}>
                     <h1>Models</h1>
 
                     <table className="table table-dark">

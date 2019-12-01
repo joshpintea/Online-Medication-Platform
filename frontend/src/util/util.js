@@ -3,7 +3,8 @@
 export const util = {
     objectIsEmpty,
     parseDateToString,
-    leftPad
+    leftPad,
+    parseDateTimeToString
 };
 
 function objectIsEmpty(obj) {
@@ -20,6 +21,12 @@ function objectIsEmpty(obj) {
 function parseDateToString(timestamp) {
     const date = new Date(timestamp);
     return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+}
+
+function parseDateTimeToString(timestamp) {
+    const date = new Date(timestamp);
+    return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + "   "
+                + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 }
 
 function leftPad(num, size) {

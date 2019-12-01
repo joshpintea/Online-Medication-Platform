@@ -27,6 +27,7 @@ public class DoctorSoapService extends WebServiceGatewaySupport {
     }
 
     public ActivityDto annotateActivity(Long activityId, Boolean label) {
+        System.out.println(activityId + " " + label);
         ActivityService activityService = new ActivityService();
         Application application = activityService.getApplication();
 

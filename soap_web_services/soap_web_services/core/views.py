@@ -65,6 +65,7 @@ class ActivityService(Service):
     @rpc(Long, Boolean, _returns=ActivityModel)
     def annotate_activity(self, activity_id, label):
         try:
+            print(activity_id, label)
             activity = Activity.objects.get(pk=activity_id)
 
             if type(activity.is_violated) == bytes:

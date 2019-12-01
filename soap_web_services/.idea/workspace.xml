@@ -2,28 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea444cb1-58a8-48ca-bd9d-e436ec916774" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/soap_web_services.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/config/SoapClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/config/SoapClientConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/service/CaregiverClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/core/soap_web_services/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/core/soap_web_services/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/core/soap_web_services/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/core/soap_web_services/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/core/soap_web_services/HelloWorldService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/core/soap_web_services/HelloWorldService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/core/soap_web_services/ObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/core/soap_web_services/ObjectFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/core/soap_web_services/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/core/soap_web_services/ObjectFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/core/soap_web_services/SayHello.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/core/soap_web_services/SayHello.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/core/soap_web_services/SayHelloResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/core/soap_web_services/SayHelloResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/core/soap_web_services/StringArray.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/core/soap_web_services/StringArray.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/endpoints/src/main/java/assignment1/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/endpoints/src/main/java/assignment1/controller/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/ActivityHistory/ActivitiesViolatedPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/ActivityHistory/ActivityHistoryPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/ActivityHistory/chart/ActivityBarChart.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/ActivityHistory/chart/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/ActivityHistory/component/ActivityViolated.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/ActivityHistory/component/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/ActivityHistory/form/ActivitiesAfterPatientForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/ActivityHistory/form/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/ActivityHistory/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/ActivityHistory/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/service/doctor/DoctorSoapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/service/doctor/DoctorSoapService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/endpoints/src/main/java/assignment1/controller/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/endpoints/src/main/java/assignment1/controller/DoctorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/AppConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/AppConstants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/DoctorApp/DoctorApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/DoctorApp/DoctorApp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/DoctorApp/DoctorDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/DoctorApp/DoctorDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/service/doctor.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/service/doctor.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/util/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/util/util.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soap_web_services/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/soap_web_services/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/soap_web_services/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/soap_web_services/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,11 +45,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/soap_web_services/core/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
-              <caret line="54" column="44" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
+            <state relative-caret-position="632">
+              <caret line="122" column="27" selection-start-line="122" selection-start-column="27" selection-end-line="122" selection-end-column="27" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../soap_env/Lib/site-packages/django/db/models/fields/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="1159" column="8" selection-start-line="1159" selection-start-column="8" selection-end-line="1159" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -62,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/soap_web_services/core/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1302">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="372">
+              <caret line="67" column="37" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
@@ -151,8 +160,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2567" />
-    <option name="y" value="-29" />
+    <option name="x" value="-66" />
+    <option name="y" value="-28" />
     <option name="width" value="974" />
     <option name="height" value="1057" />
   </component>
@@ -250,15 +259,15 @@
       <option name="presentableId" value="Default" />
       <updated>1575111481950</updated>
       <workItem from="1575111484321" duration="24597000" />
-      <workItem from="1575199205894" duration="1439000" />
+      <workItem from="1575199205894" duration="2076000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26036000" />
+    <option name="totallyTimeSpent" value="26673000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
@@ -337,16 +346,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/soap_web_services/core/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="54" column="44" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/soap_web_services/core/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -387,10 +386,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../soap_env/Lib/site-packages/django/db/models/fields/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="1159" column="8" selection-start-line="1159" selection-start-column="8" selection-end-line="1159" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap_web_services/core/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="122" column="27" selection-start-line="122" selection-start-column="27" selection-end-line="122" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/soap_web_services/core/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1302">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="372">
+          <caret line="67" column="37" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
           </folding>

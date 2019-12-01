@@ -1,5 +1,7 @@
 package assignment1.controller;
 
+import assignment1.controller.requestmodels.AddRecommendationRequestBody;
+import assignment1.controller.requestmodels.AnnotateActivityRequestBody;
 import assignment1.dto.ActivityDto;
 import assignment1.dto.DoctorDto;
 import assignment1.dto.MedPlanNotObeyed;
@@ -59,14 +61,14 @@ public class DoctorController {
     }
 
     @PostMapping(value = "/annotate_activity")
-    public ActivityDto annotateActivity(Long activityId, Boolean label) {
-        return doctorSoapService.annotateActivity(activityId, label);
+    public ActivityDto annotateActivity(@RequestBody AnnotateActivityRequestBody annotateActivityRequestBody) {
+        return doctorSoapService.annotateActivity(annotateActivityRequestBody.getActivityId(),
+                annotateActivityRequestBody.isLabel());
     }
 
     @PostMapping(value = "/add_recommendation")
-    public void addRecommendation(Long activityId, String recommendation) {
-        System.out.println("hello");
-        doctorSoapService.addRecommendation(activityId, recommendation);
+    public void addRecommendation(@RequestBody AddRecommendationRequestBody requestBody) {
+        doctorSoapService.addRecommendation(requestBody.getActivityId(), requestBody.getMessage());
     }
 
     @GetMapping(value = "/get_not_obeyed_med_plan/{patientId}/{date}")

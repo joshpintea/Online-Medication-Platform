@@ -15,7 +15,11 @@ const ApiRoutes = function () {
     this.userUrl = this.baseUrl + "/api/user";
     this.loggedUserUrl = this.userUrl + "/logged";
 
-    this.sideEffectUrl = this.baseUrl + "/api/side_effect"
+    this.sideEffectUrl = this.baseUrl + "/api/side_effect";
+    this.activityByPatientUrl = this.doctorUrl + '/activity_by_patient/';
+    this.annotateActivityUrl = this.doctorUrl + '/annotate_activity';
+    this.addActivityRecommendation = this.doctorUrl + '/add_recommendation';
+    this.notObeyedMedPlan = this.doctorUrl + '/get_not_obeyed_med_plan/';
 };
 
 const AppRoutes = function () {
@@ -29,6 +33,9 @@ const AppRoutes = function () {
     this.caregiverCrudUrl = this.doctorDashboard + "crud/caregiver";
     this.sideEffectCrudUrl = this.doctorDashboard + "crud/side_effect";
     this.activitiesViolated = this.caregiverBaseUrl + "/activities_violated";
+    this.activitiesHistory = this.doctorDashboard + 'activity_history';
+    this.activitiesViolated = this.doctorDashboard + 'activities_violated';
+    this.disobeyedMedPlans = this.doctorDashboard + 'disobeyed_med_plans';
 };
 
 
