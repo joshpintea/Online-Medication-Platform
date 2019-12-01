@@ -1,5 +1,6 @@
 package assignment1.config;
 
+import assignment1.service.caregiver.CaregiverSoapService;
 import assignment1.service.doctor.DoctorSoapService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,5 +26,19 @@ public class SoapClientConfig {
         doctorSoapService.setMarshaller(marshaller);
         doctorSoapService.setUnmarshaller(marshaller);
         return doctorSoapService;
+    }
+
+    @Bean
+    public CaregiverSoapService caregiverSoapService() {
+        Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
+        marshaller.setContextPath("core.recommendation_web_service");
+
+        CaregiverSoapService caregiverSoapService = new CaregiverSoapService();
+        caregiverSoapService.setDefaultUri("http://localhost:8087/app/ws/activities.wsdl");
+
+        caregiverSoapService.setMarshaller(marshaller);
+        caregiverSoapService.setUnmarshaller(marshaller);
+
+        return caregiverSoapService;
     }
 }

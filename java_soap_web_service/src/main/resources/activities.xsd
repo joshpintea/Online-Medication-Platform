@@ -1,0 +1,38 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="core/recommendation-web-service"
+           targetNamespace="core/recommendation-web-service" elementFormDefault="qualified">
+
+    <xs:element name="ActivityRecommendationRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="patientId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ActivityRecommendationResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="activityRecommendation" type="tns:activityRecommendation" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="activityRecommendation">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="recommendation" type="xs:string"/>
+            <xs:element name="activity" type="tns:activity"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="activity">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="startDate" type="xs:date"/>
+            <xs:element name="endDate" type="xs:date"/>
+            <xs:element name="activityLabel" type="xs:string"/>
+            <xs:element name="isViolated" type="xs:boolean"/>
+            <xs:element name="isNormal" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

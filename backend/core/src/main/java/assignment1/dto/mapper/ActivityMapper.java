@@ -17,7 +17,7 @@ public class ActivityMapper {
     }
 
     public static ActivityDto convertToDto(ActivityModel activityModel) {
-        return new ActivityDto (
+        return new ActivityDto(
                 activityModel.getId(),
                 activityModel.getPatientId().getValue(),
                 activityModel.getActivityLavel().getValue(),
@@ -25,6 +25,18 @@ public class ActivityMapper {
                 activityModel.getEndDate().getValue().toGregorianCalendar().getTime(),
                 activityModel.getIsViolated().getValue(),
                 activityModel.getIsNormal().getValue()
+        );
+    }
+
+    public static ActivityDto convertToDto(core.recommendation_web_service.Activity activity) {
+        return new ActivityDto(
+                activity.getId(),
+                null,
+                activity.getActivityLabel(),
+                activity.getStartDate().toGregorianCalendar().getTime(),
+                activity.getEndDate().toGregorianCalendar().getTime(),
+                activity.isIsViolated(),
+                activity.isIsNormal()
         );
     }
 }

@@ -20,6 +20,7 @@ const ApiRoutes = function () {
     this.annotateActivityUrl = this.doctorUrl + '/annotate_activity';
     this.addActivityRecommendation = this.doctorUrl + '/add_recommendation';
     this.notObeyedMedPlan = this.doctorUrl + '/get_not_obeyed_med_plan/';
+    this.getActivitiesRecommendationForPatient = this.caregiverUrl + '/activity_recommendation/';
 };
 
 const AppRoutes = function () {

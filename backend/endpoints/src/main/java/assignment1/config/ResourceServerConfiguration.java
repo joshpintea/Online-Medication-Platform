@@ -25,6 +25,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
                 .antMatchers(HttpMethod.GET, EndpointsUtil.PATIENT + "/**").hasAnyRole(UserRole.ROLE_PATIENT.withoutRoleKey(), UserRole.ROLE_DOCTOR.withoutRoleKey())
                 .antMatchers(HttpMethod.GET, EndpointsUtil.CAREGIVER + EndpointsUtil.CAREGIVER_PATIENTS).hasRole(UserRole.ROLE_CAREGIVER.withoutRoleKey())
                 .antMatchers(EndpointsUtil.CAREGIVER).hasRole(UserRole.ROLE_DOCTOR.withoutRoleKey())
+                .antMatchers(EndpointsUtil.CAREGIVER + EndpointsUtil.ACTIVITIES_RECOMMENDATIONS).hasRole(UserRole.ROLE_CAREGIVER.withoutRoleKey())
                 .antMatchers("/oauth/**").permitAll()
                 .antMatchers(EndpointsUtil.USER + "/**").permitAll()
                 .antMatchers("/test/**").permitAll()

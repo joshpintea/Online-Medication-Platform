@@ -11,6 +11,7 @@ public class EndpointsUtil {
 
     public static final String CAREGIVER = API + "/caregiver";
     public static final String CAREGIVER_PATIENTS = "/patients/{id}";
+    public static final String ACTIVITIES_RECOMMENDATIONS = "/activity_recommendation/{patient_id}";
 
 
     public static final String DRUG = API + "/drug";
