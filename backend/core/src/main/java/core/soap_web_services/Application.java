@@ -1,14 +1,17 @@
 
 package core.soap_web_services;
 
-import java.math.BigInteger;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
+import views.core.soap_web_services.ActivityModel;
+import views.core.soap_web_services.ActivityModelArray;
+import views.core.soap_web_services.MedicationPlanNotObeyedArray;
 
 
 /**
@@ -19,26 +22,75 @@ import javax.xml.ws.ResponseWrapper;
  */
 @WebService(name = "Application", targetNamespace = "soap_web_services.core")
 @XmlSeeAlso({
-    ObjectFactory.class
+    core.soap_web_services.ObjectFactory.class,
+    views.core.soap_web_services.ObjectFactory.class
 })
 public interface Application {
 
 
     /**
      * 
-     * @param times
-     * @param name
+     * @param datetime
+     * @param patientId
      * @return
-     *     returns core.soap_web_services.StringArray
+     *     returns views.core.soap_web_services.ActivityModelArray
      */
-    @WebMethod(operationName = "say_hello", action = "say_hello")
-    @WebResult(name = "say_helloResult", targetNamespace = "soap_web_services.core")
-    @RequestWrapper(localName = "say_hello", targetNamespace = "soap_web_services.core", className = "core.soap_web_services.SayHello")
-    @ResponseWrapper(localName = "say_helloResponse", targetNamespace = "soap_web_services.core", className = "core.soap_web_services.SayHelloResponse")
-    public StringArray sayHello(
-        @WebParam(name = "name", targetNamespace = "soap_web_services.core")
-        String name,
-        @WebParam(name = "times", targetNamespace = "soap_web_services.core")
-        BigInteger times);
+    @WebMethod(operationName = "get_activities_by_patient_id", action = "get_activities_by_patient_id")
+    @WebResult(name = "get_activities_by_patient_idResult", targetNamespace = "soap_web_services.core")
+    @RequestWrapper(localName = "get_activities_by_patient_id", targetNamespace = "soap_web_services.core", className = "core.soap_web_services.GetActivitiesByPatientId")
+    @ResponseWrapper(localName = "get_activities_by_patient_idResponse", targetNamespace = "soap_web_services.core", className = "core.soap_web_services.GetActivitiesByPatientIdResponse")
+    public ActivityModelArray getActivitiesByPatientId(
+        @WebParam(name = "patient_id", targetNamespace = "soap_web_services.core")
+        Long patientId,
+        @WebParam(name = "datetime", targetNamespace = "soap_web_services.core")
+        XMLGregorianCalendar datetime);
+
+    /**
+     * 
+     * @param activityId
+     * @param label
+     * @return
+     *     returns views.core.soap_web_services.ActivityModel
+     */
+    @WebMethod(operationName = "annotate_activity", action = "annotate_activity")
+    @WebResult(name = "annotate_activityResult", targetNamespace = "soap_web_services.core")
+    @RequestWrapper(localName = "annotate_activity", targetNamespace = "soap_web_services.core", className = "core.soap_web_services.AnnotateActivity")
+    @ResponseWrapper(localName = "annotate_activityResponse", targetNamespace = "soap_web_services.core", className = "core.soap_web_services.AnnotateActivityResponse")
+    public ActivityModel annotateActivity(
+        @WebParam(name = "activity_id", targetNamespace = "soap_web_services.core")
+        Long activityId,
+        @WebParam(name = "label", targetNamespace = "soap_web_services.core")
+        Boolean label);
+
+    /**
+     * 
+     * @param activityId
+     * @param recommendation
+     */
+    @WebMethod(operationName = "add_recommendation", action = "add_recommendation")
+    @RequestWrapper(localName = "add_recommendation", targetNamespace = "soap_web_services.core", className = "core.soap_web_services.AddRecommendation")
+    @ResponseWrapper(localName = "add_recommendationResponse", targetNamespace = "soap_web_services.core", className = "core.soap_web_services.AddRecommendationResponse")
+    public void addRecommendation(
+        @WebParam(name = "activity_id", targetNamespace = "soap_web_services.core")
+        Long activityId,
+        @WebParam(name = "recommendation", targetNamespace = "soap_web_services.core")
+        String recommendation);
+
+    /**
+     * 
+     * @param dateTime
+     * @param patientId
+     * @return
+     *     returns views.core.soap_web_services.MedicationPlanNotObeyedArray
+     */
+    @WebMethod(operationName = "get_not_obeyed_medication_plan", action = "get_not_obeyed_medication_plan")
+    @WebResult(name = "get_not_obeyed_medication_planResult", targetNamespace = "soap_web_services.core")
+    @RequestWrapper(localName = "get_not_obeyed_medication_plan", targetNamespace = "soap_web_services.core", className = "core.soap_web_services.GetNotObeyedMedicationPlan")
+    @ResponseWrapper(localName = "get_not_obeyed_medication_planResponse", targetNamespace = "soap_web_services.core", className = "core.soap_web_services.GetNotObeyedMedicationPlanResponse")
+    public MedicationPlanNotObeyedArray getNotObeyedMedicationPlan(
+        @WebParam(name = "patient_id", targetNamespace = "soap_web_services.core")
+        Long patientId,
+        @WebParam(name = "date_time", targetNamespace = "soap_web_services.core")
+        XMLGregorianCalendar dateTime);
 
 }

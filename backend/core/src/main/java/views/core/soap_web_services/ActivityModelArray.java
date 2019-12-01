@@ -1,5 +1,5 @@
 
-package core.soap_web_services;
+package views.core.soap_web_services;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,16 +10,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for stringArray complex type.
+ * <p>Java class for ActivityModelArray complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="stringArray">
+ * &lt;complexType name="ActivityModelArray">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="string" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="ActivityModel" type="{soap_web_services.core.views}ActivityModel" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,41 +29,41 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "stringArray", propOrder = {
-    "string"
+@XmlType(name = "ActivityModelArray", propOrder = {
+    "activityModel"
 })
-public class StringArray {
+public class ActivityModelArray {
 
-    @XmlElement(nillable = true)
-    protected List<String> string;
+    @XmlElement(name = "ActivityModel", nillable = true)
+    protected List<ActivityModel> activityModel;
 
     /**
-     * Gets the value of the string property.
+     * Gets the value of the activityModel property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the string property.
+     * This is why there is not a <CODE>set</CODE> method for the activityModel property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getString().add(newItem);
+     *    getActivityModel().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * {@link ActivityModel }
      * 
      * 
      */
-    public List<String> getString() {
-        if (string == null) {
-            string = new ArrayList<String>();
+    public List<ActivityModel> getActivityModel() {
+        if (activityModel == null) {
+            activityModel = new ArrayList<ActivityModel>();
         }
-        return this.string;
+        return this.activityModel;
     }
 
 }

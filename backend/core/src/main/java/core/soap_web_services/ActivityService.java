@@ -17,48 +17,48 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "HelloWorldService", targetNamespace = "soap_web_services.core", wsdlLocation = "http://127.0.0.1:8000/wsdl/")
-public class HelloWorldService
+@WebServiceClient(name = "ActivityService", targetNamespace = "soap_web_services.core", wsdlLocation = "http://localhost:8000/doctor_wsdl/")
+public class ActivityService
     extends Service
 {
 
-    private final static URL HELLOWORLDSERVICE_WSDL_LOCATION;
-    private final static WebServiceException HELLOWORLDSERVICE_EXCEPTION;
-    private final static QName HELLOWORLDSERVICE_QNAME = new QName("soap_web_services.core", "HelloWorldService");
+    private final static URL ACTIVITYSERVICE_WSDL_LOCATION;
+    private final static WebServiceException ACTIVITYSERVICE_EXCEPTION;
+    private final static QName ACTIVITYSERVICE_QNAME = new QName("soap_web_services.core", "ActivityService");
 
     static {
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://127.0.0.1:8000/wsdl/");
+            url = new URL("http://localhost:8000/doctor_wsdl/");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
-        HELLOWORLDSERVICE_WSDL_LOCATION = url;
-        HELLOWORLDSERVICE_EXCEPTION = e;
+        ACTIVITYSERVICE_WSDL_LOCATION = url;
+        ACTIVITYSERVICE_EXCEPTION = e;
     }
 
-    public HelloWorldService() {
-        super(__getWsdlLocation(), HELLOWORLDSERVICE_QNAME);
+    public ActivityService() {
+        super(__getWsdlLocation(), ACTIVITYSERVICE_QNAME);
     }
 
-    public HelloWorldService(WebServiceFeature... features) {
-        super(__getWsdlLocation(), HELLOWORLDSERVICE_QNAME, features);
+    public ActivityService(WebServiceFeature... features) {
+        super(__getWsdlLocation(), ACTIVITYSERVICE_QNAME, features);
     }
 
-    public HelloWorldService(URL wsdlLocation) {
-        super(wsdlLocation, HELLOWORLDSERVICE_QNAME);
+    public ActivityService(URL wsdlLocation) {
+        super(wsdlLocation, ACTIVITYSERVICE_QNAME);
     }
 
-    public HelloWorldService(URL wsdlLocation, WebServiceFeature... features) {
-        super(wsdlLocation, HELLOWORLDSERVICE_QNAME, features);
+    public ActivityService(URL wsdlLocation, WebServiceFeature... features) {
+        super(wsdlLocation, ACTIVITYSERVICE_QNAME, features);
     }
 
-    public HelloWorldService(URL wsdlLocation, QName serviceName) {
+    public ActivityService(URL wsdlLocation, QName serviceName) {
         super(wsdlLocation, serviceName);
     }
 
-    public HelloWorldService(URL wsdlLocation, QName serviceName, WebServiceFeature... features) {
+    public ActivityService(URL wsdlLocation, QName serviceName, WebServiceFeature... features) {
         super(wsdlLocation, serviceName, features);
     }
 
@@ -85,10 +85,10 @@ public class HelloWorldService
     }
 
     private static URL __getWsdlLocation() {
-        if (HELLOWORLDSERVICE_EXCEPTION!= null) {
-            throw HELLOWORLDSERVICE_EXCEPTION;
+        if (ACTIVITYSERVICE_EXCEPTION!= null) {
+            throw ACTIVITYSERVICE_EXCEPTION;
         }
-        return HELLOWORLDSERVICE_WSDL_LOCATION;
+        return ACTIVITYSERVICE_WSDL_LOCATION;
     }
 
 }

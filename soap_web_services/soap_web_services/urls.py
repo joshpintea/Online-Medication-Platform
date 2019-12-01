@@ -14,10 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from spyne.protocol.soap import Soap11
 from spyne.server.django import DjangoView
 
-from soap_web_services.core.views import app, HelloWorldService
+from soap_web_services.core.views import app
 
 urlpatterns = [
     url(r'^doctor_wsdl/', DjangoView.as_view(application=app)),

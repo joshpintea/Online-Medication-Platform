@@ -1,6 +1,6 @@
 package assignment1.config;
 
-import assignment1.service.CaregiverClient;
+import assignment1.service.doctor.DoctorSoapService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
@@ -19,11 +19,11 @@ public class SoapClientConfig {
 
 
     @Bean
-    public CaregiverClient caregiverClient(Jaxb2Marshaller marshaller) {
-        CaregiverClient caregiverClient = new CaregiverClient();
-        caregiverClient.setDefaultUri("http://localhost:8000/wsdl/");
-        caregiverClient.setMarshaller(marshaller);
-        caregiverClient.setUnmarshaller(marshaller);
-        return caregiverClient;
+    public DoctorSoapService caregiverClient(Jaxb2Marshaller marshaller) {
+        DoctorSoapService doctorSoapService = new DoctorSoapService();
+        doctorSoapService.setDefaultUri("http://localhost:8000/doctor_wsdl/");
+        doctorSoapService.setMarshaller(marshaller);
+        doctorSoapService.setUnmarshaller(marshaller);
+        return doctorSoapService;
     }
 }

@@ -1,7 +1,9 @@
 package assignment1.dto.mapper;
 
+import assignment1.dto.ActivityDto;
 import assignment1.dto.ActivityViewDto;
 import assignment1.entities.Activity;
+import views.core.soap_web_services.ActivityModel;
 
 public class ActivityMapper {
 
@@ -12,5 +14,17 @@ public class ActivityMapper {
                 activity.getEndDate(),
                 activity.getActivityLabel(),
                 activity.getIsViolated());
+    }
+
+    public static ActivityDto convertToDto(ActivityModel activityModel) {
+        return new ActivityDto (
+                activityModel.getId(),
+                activityModel.getPatientId().getValue(),
+                activityModel.getActivityLavel().getValue(),
+                activityModel.getStartDate().getValue().toGregorianCalendar().getTime(),
+                activityModel.getEndDate().getValue().toGregorianCalendar().getTime(),
+                activityModel.getIsViolated().getValue(),
+                activityModel.getIsNormal().getValue()
+        );
     }
 }

@@ -1,13 +1,17 @@
 package assignment1.controller;
 
+import assignment1.dto.ActivityDto;
 import assignment1.dto.DoctorDto;
+import assignment1.dto.MedPlanNotObeyed;
 import assignment1.dto.MedicationPlanDto;
 import assignment1.exception.ObjectNotFound;
 import assignment1.service.CrudService;
 import assignment1.service.doctor.DoctorService;
+import assignment1.service.doctor.DoctorSoapService;
 import assignment1.util.EndpointsUtil;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
 import java.util.List;
 
 @RestController
@@ -15,10 +19,12 @@ import java.util.List;
 public class DoctorController {
     private CrudService<DoctorDto> doctorCrudService;
     private DoctorService doctorService;
+    private DoctorSoapService doctorSoapService;
 
-    public DoctorController(CrudService<DoctorDto> doctorCrudService, DoctorService doctorService) {
+    public DoctorController(CrudService<DoctorDto> doctorCrudService, DoctorService doctorService, DoctorSoapService doctorSoapService) {
         this.doctorCrudService = doctorCrudService;
         this.doctorService = doctorService;
+        this.doctorSoapService = doctorSoapService;
     }
 
     @GetMapping
@@ -41,8 +47,31 @@ public class DoctorController {
         return this.doctorCrudService.save(doctorDto);
     }
 
-    @PostMapping(value=EndpointsUtil.CREATE_MEDICATION_PLAN)
+    @PostMapping(value = EndpointsUtil.CREATE_MEDICATION_PLAN)
     public MedicationPlanDto createMedicationPlan(@RequestBody MedicationPlanDto medicationPlanDto) {
         return this.doctorService.createMedicationPlan(medicationPlanDto);
+    }
+
+    @GetMapping(value = "/activity_by_patient/{patientId}/{date}")
+    public List<ActivityDto> getActivitiesByPatient(@PathVariable("patientId") Long patientId,
+                                                    @PathVariable("date") Date date) {
+        return doctorSoapService.getActivitiesByPatientId(patientId, date);
+    }
+
+    @PostMapping(value = "/annotate_activity")
+    public ActivityDto annotateActivity(Long activityId, Boolean label) {
+        return doctorSoapService.annotateActivity(activityId, label);
+    }
+
+    @PostMapping(value = "/add_recommendation")
+    public void addRecommendation(Long activityId, String recommendation) {
+        System.out.println("hello");
+        doctorSoapService.addRecommendation(activityId, recommendation);
+    }
+
+    @GetMapping(value = "/get_not_obeyed_med_plan/{patientId}/{date}")
+    public List<MedPlanNotObeyed> getNotObeyedMedPlan(@PathVariable("patientId") Long patientId,
+                                                      @PathVariable("date") Date date) {
+        return doctorSoapService.getNotObeyedMedPlan(patientId, date);
     }
 }

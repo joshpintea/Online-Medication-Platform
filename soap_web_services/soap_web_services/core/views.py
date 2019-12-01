@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
-from spyne import ResourceNotFoundError, Fault
+from spyne import ResourceNotFoundError, Fault, DateTime
 
 from spyne.server.django import DjangoApplication
 from spyne.model.primitive import Unicode, Integer, Long, Date, Boolean
@@ -51,8 +51,9 @@ class HelloWorldService(Service):
 
 
 class ActivityService(Service):
-    @rpc(Long, Date, _returns=Iterable(ActivityModel))
-    def get_activities_by_patient_id(self, patient_id, date):
+    @rpc(Long, DateTime, _returns=Iterable(ActivityModel))
+    def get_activities_by_patient_id(self, patient_id, datetime):
+        date = datetime.date()
         activities_per_day = Activity.objects.filter(patient_id=patient_id, start_date__contains=date)
 
         for activity in activities_per_day:
@@ -104,8 +105,9 @@ class ActivityService(Service):
 
 
 class MedicationPlanService(Service):
-    @rpc(Long, Date, _returns=Iterable(MedicationPlanNotObeyed))
-    def get_not_obeyed_medication_plan(self, patient_id, date):
+    @rpc(Long, DateTime, _returns=Iterable(MedicationPlanNotObeyed))
+    def get_not_obeyed_medication_plan(self, patient_id, date_time):
+        date = date_time.date()
         medication_plans = MedicationPlan.objects.filter(patient_id=patient_id,
                                                          start_date__lte=date,
                                                          end_date__gte=date)
@@ -154,7 +156,7 @@ class MedicationPlanService(Service):
         return not_obeyed_medication_plans
 
 
-app = Application([HelloWorldService, ActivityService, MedicationPlanService],
+app = Application([ActivityService, MedicationPlanService],
                   'soap_web_services.core',
                   in_protocol=Soap11(validator='lxml'),
                   out_protocol=Soap11())

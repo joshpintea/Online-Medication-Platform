@@ -4,11 +4,13 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class ActivityDto implements Serializable {
+    private Long id;
     private Long patientId;
     private String activityLabel;
     private Date start;
     private Date end;
-    private Boolean isVioldated;
+    private Boolean isViolated;
+    private Boolean isNormal;
 
     public ActivityDto() {
 
@@ -21,12 +23,22 @@ public class ActivityDto implements Serializable {
         this.end = end;
     }
 
-    public ActivityDto(Long patientId, String activityLabel, Date start, Date end, Boolean isVioldated) {
+    public ActivityDto(Long patientId, String activityLabel, Date start, Date end, Boolean isViolated) {
         this.patientId = patientId;
         this.activityLabel = activityLabel;
         this.start = start;
         this.end = end;
-        this.isVioldated = isVioldated;
+        this.isViolated = isViolated;
+    }
+
+    public ActivityDto(Long id, Long patientId, String activityLabel, Date start, Date end, Boolean isViolated, Boolean isNormal) {
+        this.patientId = patientId;
+        this.activityLabel = activityLabel;
+        this.start = start;
+        this.end = end;
+        this.isViolated = isViolated;
+        this.isNormal = isNormal;
+        this.id = id;
     }
 
     public Long getPatientId() {
@@ -61,12 +73,28 @@ public class ActivityDto implements Serializable {
         this.end = end;
     }
 
-    public Boolean getIsVioldated() {
-        return isVioldated;
+    public Long getId() {
+        return id;
     }
 
-    public void setIsVioldated(Boolean isVioldated) {
-        this.isVioldated = isVioldated;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Boolean getViolated() {
+        return isViolated;
+    }
+
+    public void setViolated(Boolean violated) {
+        isViolated = violated;
+    }
+
+    public Boolean getNormal() {
+        return isNormal;
+    }
+
+    public void setNormal(Boolean normal) {
+        isNormal = normal;
     }
 
     @Override
