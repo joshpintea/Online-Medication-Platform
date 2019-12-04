@@ -30,10 +30,9 @@ class ActivitiesViolatedPage extends React.Component {
 
     render() {
         const {patients, activities} = this.state;
-
         const activitiesViolated = activities.filter( activity => activity.violated === true);
 
-        const activitiesViolatedContent = activities.map((activity, key) => {
+        const activitiesViolatedContent = activitiesViolated.map((activity, key) => {
             return (
                 <ActivityViolated activity={activity} key={key}/>
             )
