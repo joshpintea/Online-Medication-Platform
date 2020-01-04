@@ -1,0 +1,23 @@
+# Docker Compose file Reference (https://docs.docker.com/compose/compose-file/)
+
+version: '3.3'
+
+# Define services
+services:
+  # Frontend Service
+  app-client:
+    build:
+      context: . # Use an image built from the specified dockerfile in the `frontend` directory.
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3000" # Forward the exposed port 80 on the container to port 80 on the host machine
+    restart: always
+    networks:
+      - frontend
+    volumes:
+      - /app/node_modules
+      - .:/app
+
+# Networks to be created to facilitate communication between containers
+networks:
+  frontend:

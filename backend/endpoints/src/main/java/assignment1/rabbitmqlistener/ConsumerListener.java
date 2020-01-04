@@ -19,7 +19,7 @@ public class ConsumerListener {
         this.activityService = activityService;
     }
 
-    @RabbitListener(queues = QUEUE_NAME)
+//     @RabbitListener(queues = QUEUE_NAME)
     public void listen(Message in) {
         String messageAsJson = new String(in.getBody());
         this.logger.info("Message read from myQueue : " + messageAsJson);

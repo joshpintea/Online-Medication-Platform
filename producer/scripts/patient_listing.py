@@ -2,10 +2,10 @@
 import mysql.connector
 
 cnx = mysql.connector.connect(
-    host="127.0.0.1",
+    host="hk-mysql",
     port=3306,
     user="root",
-    password="",
+    password="root",
     database="ds_assignment1")
 
 cur = cnx.cursor()

@@ -2,158 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea444cb1-58a8-48ca-bd9d-e436ec916774" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/service/caregiver/CaregiverSoapService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/CaregiverApp/components/RecommendationComponent.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/config/PersistenceConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/config/WebServiceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/endpoints/ActivitiesEndpoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/entities/Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/entities/ActivityRecommendation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/entities/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/entities/Caregiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/entities/Doctor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/entities/Drug.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/entities/MedicationPlan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/entities/MedicationPlanInterval.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/entities/Patient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/entities/SideEffect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/entities/UserRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/mapper/ActivityMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/mapper/ActivityRecommendationMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/repositories/ActivityRecommendationRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/repositories/ActivityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/repositories/BaseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/repositories/CaregiverRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/repositories/DoctorRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/repositories/DrugRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/repositories/MedicationPlanIntervalRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/repositories/MedicationPlanRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/repositories/PatientRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/repositories/SideEffectRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/repositories/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/service/activity/ActivityService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/java/assg4/web_service/service/activity/ActivityServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/resources/activities.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/resources/countries.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/resources/persistence.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/config/SoapClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/config/SoapClientConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/dto/mapper/ActivityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/core/src/main/java/assignment1/dto/mapper/ActivityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/endpoints/src/main/java/assignment1/config/ResourceServerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/endpoints/src/main/java/assignment1/config/ResourceServerConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/endpoints/src/main/java/assignment1/controller/CaregiverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/endpoints/src/main/java/assignment1/controller/CaregiverController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/endpoints/src/main/java/assignment1/util/EndpointsUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/endpoints/src/main/java/assignment1/util/EndpointsUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/AppConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/AppConstants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/CaregiverApp/CaregiverPatientsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/CaregiverApp/CaregiverPatientsPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/service/caregiver.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/service/caregiver.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java_soap_web_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java_soap_web_service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java_soap_web_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../java_soap_web_service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java_soap_web_service/src/test/java/assg4/web_service/WebServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/soap_web_services/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="78" selection-start-line="78" selection-end-line="83" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/soap_web_services/core/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="122" column="27" selection-start-line="122" selection-start-column="27" selection-end-line="122" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../soap_env/Lib/site-packages/django/db/models/fields/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="1159" column="8" selection-start-line="1159" selection-start-column="8" selection-end-line="1159" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/soap_web_services/core/tests.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/soap_web_services/core/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="152" column="56" lean-forward="true" selection-start-line="152" selection-start-column="56" selection-end-line="152" selection-end-column="56" />
-              <folding>
-                <element signature="e#0#53#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python/Python3.7.3/Lib/site-packages/spyne/model/complex.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23544">
-              <caret line="1310" column="36" selection-start-line="1310" selection-start-column="36" selection-end-line="1310" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/soap_web_services/.gitignore">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python/Python3.7.3/Lib/site-packages/spyne/model/primitive/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="107" column="12" selection-start-line="107" selection-start-column="4" selection-end-line="107" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/soap_web_services/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="e#641#673#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -172,75 +27,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/soap_web_services/settings.py" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/client.py" />
-        <option value="$PROJECT_DIR$/soap_web_services/core/models.py" />
-        <option value="$PROJECT_DIR$/soap_web_services/urls.py" />
-        <option value="$PROJECT_DIR$/soap_web_services/core/views.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-66" />
-    <option name="y" value="-28" />
-    <option name="width" value="974" />
-    <option name="height" value="1057" />
-  </component>
+  <component name="ProjectId" id="1Vvb7ezxVBIR887z4CzBw5uoJ0K" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="soap_web_services" type="b2602c69:ProjectViewProjectNode" />
-              <item name="soap_web_services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="soap_web_services" type="b2602c69:ProjectViewProjectNode" />
-              <item name="soap_web_services" type="462c0819:PsiDirectoryNode" />
-              <item name="soap_web_services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="soap_web_services" type="b2602c69:ProjectViewProjectNode" />
-              <item name="soap_web_services" type="462c0819:PsiDirectoryNode" />
-              <item name="soap_web_services" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../soap_env" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontend" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="soap_web_services" type="Python.DjangoServer" factoryName="Django server">
@@ -267,6 +67,18 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -285,152 +97,13 @@
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="28688000" />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.3290461" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49946696" visible="true" weight="0.08896034" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/soap_web_services/core/apps.py" />
-    <entry file="file://$PROJECT_DIR$/soap_web_services/core/admin.py" />
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python/Python3.7.3/Lib/site-packages/spyne/interface/wsdl/defn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="95" column="6" selection-start-line="95" selection-start-column="6" selection-end-line="95" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python/Python3.7.3/Lib/site-packages/spyne/application.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="71" column="36" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python/Python3.7.3/Lib/site-packages/spyne/server/django.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="38" column="39" lean-forward="true" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py" />
-    <entry file="file://$PROJECT_DIR$/soap_web_services/core/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models.py" />
-    <entry file="file://$PROJECT_DIR$/soap_web_services/core/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://C:/Python/Python3.7.3/Lib/site-packages/spyne/model/complex.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23544">
-          <caret line="1310" column="36" selection-start-line="1310" selection-start-column="36" selection-end-line="1310" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/soap_web_services/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://C:/Python/Python3.7.3/Lib/site-packages/spyne/model/primitive/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="107" column="12" selection-start-line="107" selection-start-column="4" selection-end-line="107" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../soap_env/Lib/site-packages/django/db/models/fields/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="1159" column="8" selection-start-line="1159" selection-start-column="8" selection-end-line="1159" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/soap_web_services/core/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="152" column="56" lean-forward="true" selection-start-line="152" selection-start-column="56" selection-end-line="152" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/soap_web_services/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="78" selection-start-line="78" selection-end-line="83" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/soap_web_services/core/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="122" column="27" selection-start-line="122" selection-start-column="27" selection-end-line="122" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/soap_web_services/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#641#673#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state x="778" y="313" width="424" height="478" key="FileChooserDialogImpl" timestamp="1578136902811">
+      <screen x="71" y="30" width="1849" height="1050" />
+    </state>
+    <state x="778" y="313" width="424" height="478" key="FileChooserDialogImpl/71.30.1849.1050/1920.0.1920.1080@71.30.1849.1050" timestamp="1578136902811" />
   </component>
 </project>

@@ -1,0 +1,71 @@
+# Docker Compose file Reference (https://docs.docker.com/compose/compose-file/)
+
+version: '3.3'
+
+# Define services
+services:
+  hk-nginx:
+    container_name: hk-nginx
+    image: nginx:1.13
+    restart: always
+    ports:
+      - 8087:8087
+      - 8088:8088
+      - 443:443
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - java_soap_web_service
+      - backend
+
+#  hk-nginx-soap-java:
+#    container_name: hk-nginx-soap-java
+#    image: nginx:1.13
+#    restart: always
+#    ports:
+#      - 8087:8087
+#      - 444:444
+#    volumes:
+#      - ./nginx-soap-java/conf.d:/etc/nginx/conf.d
+#    depends_on:
+#      - java_soap_web_service
+
+  # Database Service (Mysql)
+  hk-mysql:
+     container_name: hk-mysql
+     image: mysql/mysql-server:5.7
+     environment:
+      MYSQL_DATABASE: ds_assignment1
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%'
+     ports:
+     - "3306:3306"
+     restart: always
+
+  java_soap_web_service:
+    restart: always
+    build: ./java_soap_web_service
+    working_dir: /java_soap_web_service
+    volumes:
+      - ./java_soap_web_service:/java_soap_web_service
+      - ~/.m2:/root/.m2
+    expose:
+      - "8087"
+    command: mvn clean spring-boot:run
+    depends_on:
+      - hk-mysql
+
+  backend:
+    restart: always
+    build: ./backend
+    working_dir: /backend
+    volumes:
+      - ./backend:/backend
+      - ~/.m2:/root/.m2
+    expose:
+      - "8088"
+    command: mvn clean spring-boot:run
+    depends_on:
+      - hk-mysql
+      - java_soap_web_service
+
