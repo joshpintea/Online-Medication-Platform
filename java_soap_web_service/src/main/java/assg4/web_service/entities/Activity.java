@@ -19,7 +19,7 @@ public class Activity extends BaseEntity {
     @Column(name="activity_lavel")
     private String activityLabel;
 
-    @Column(name="isViolated")
+    @Column(name="is_violated")
     private Boolean isViolated;
 
     @Column(name="is_normal")

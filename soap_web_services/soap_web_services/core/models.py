@@ -34,8 +34,8 @@ class Activity(models.Model):
     end_date = models.DateTimeField(blank=True, null=True)
     start_date = models.DateTimeField(blank=True, null=True)
     patient = models.ForeignKey('Patient', models.DO_NOTHING, blank=True, null=True)
-    is_violated = models.BooleanField(db_column='isViolated', blank=True, null=True)
-    is_normal = models.BooleanField(db_column='is_normal', blank=True, null=True)
+    is_violated = models.NullBooleanField(db_column='isViolated')
+    is_normal = models.NullBooleanField(db_column='is_normal')
 
     class Meta:
         managed = False
@@ -138,7 +138,7 @@ class MedicationPlanInterval(models.Model):
     hour = models.IntegerField(blank=True, null=True)
     intake_interval_end = models.IntegerField(blank=True, null=True)
     intake_interval_start = models.IntegerField(blank=True, null=True)
-    taken_on_time = models.BooleanField(blank=True, null=True)
+    taken_on_time = models.NullBooleanField()
     medication_plan = models.ForeignKey(MedicationPlan, models.DO_NOTHING, blank=True, null=True)
 
     class Meta:

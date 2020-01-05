@@ -17,9 +17,9 @@ def get_all_patients():
 
     # Fetch results
     results = cur.fetchall()
-
+    import datetime
+    print(datetime.datetime.now(), results)
     patients_id = [patient[0] for patient in results]
-
 
     return patients_id
 

@@ -11,29 +11,24 @@ services:
     ports:
       - 8087:8087
       - 8088:8088
+      - 8000:8000
       - 443:443
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d
     depends_on:
       - java_soap_web_service
       - backend
-
-#  hk-nginx-soap-java:
-#    container_name: hk-nginx-soap-java
-#    image: nginx:1.13
-#    restart: always
-#    ports:
-#      - 8087:8087
-#      - 444:444
-#    volumes:
-#      - ./nginx-soap-java/conf.d:/etc/nginx/conf.d
-#    depends_on:
-#      - java_soap_web_service
+      - python_soap_web_service
 
   # Database Service (Mysql)
   hk-mysql:
      container_name: hk-mysql
      image: mysql/mysql-server:5.7
+     healthcheck:
+       test: "/usr/bin/mysql --user=root --password=rootpasswd --execute \"SHOW DATABASES;\""
+       interval: 2s
+       timeout: 20s
+       retries: 10
      environment:
       MYSQL_DATABASE: ds_assignment1
       MYSQL_ROOT_PASSWORD: root
@@ -69,3 +64,39 @@ services:
       - hk-mysql
       - java_soap_web_service
 
+  python_soap_web_service:
+    restart: always
+    build: ./soap_web_services
+    working_dir: /code
+    volumes:
+      - ./soap_web_services:/code
+    expose:
+      - "8000"
+    command: /bin/bash -c "sleep 7; python manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - hk-mysql
+      - java_soap_web_service
+
+  producer:
+    restart: always
+    build: ./producer
+    working_dir: /code
+    volumes:
+      - ./producer:/code
+    command: /bin/bash -c "sleep 10; python -m pilotproducer False"
+    depends_on:
+      - java_soap_web_service
+      - hk-mysql
+      - rabbitmq
+    environment:
+      - RABBITMQ_PASS=guest
+      - RABBITMQ_USER=guest
+    links:
+      - rabbitmq:rabbitmq
+
+  rabbitmq:
+    image: 'rabbitmq:3'
+    container_name: rabbitmq
+    expose:
+      - "5672"
+      - "15672"

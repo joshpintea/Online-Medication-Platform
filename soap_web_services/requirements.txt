@@ -1,4 +1,5 @@
-django
+django==1.11.5
 spyne==2.13.2a0
 lxml
-mysqlclient
+mysqlclient==1.3.12
+django-mysql==2.2.0

@@ -29,7 +29,11 @@ def generate_activity(last_activity: str):
     start_activity, end_activity = generate_activity_interval()
     patients = get_all_patients()
 
-    patient_id = random.choice(patients)
+    if len(patients) == 0:
+        print("No patient found")
+        patient_id = None
+    else:
+        patient_id = random.choice(patients)
 
     return {
         'patient_id': patient_id,
