@@ -77,6 +77,16 @@ services:
       - hk-mysql
       - java_soap_web_service
 
+  app-client:
+    build: ./frontend
+    working_dir: /app
+    ports:
+      - "3001:3000" # Forward the exposed port 80 on the container to port 80 on the host machine
+    restart: always
+    volumes:
+      - /app/node_modules
+      - ./frontend:/app
+
   producer:
     restart: always
     build: ./producer
