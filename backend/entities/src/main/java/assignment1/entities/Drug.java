@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
+@Entity(name="drug")
 public class Drug extends BaseEntity {
     private String name;
     private Long dosage;

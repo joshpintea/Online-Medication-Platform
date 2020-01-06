@@ -3,7 +3,7 @@ package assg4.web_service.entities;
 import javax.persistence.*;
 import java.sql.Date;
 
-@Entity
+@Entity(name="user")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class User extends BaseEntity {
 
