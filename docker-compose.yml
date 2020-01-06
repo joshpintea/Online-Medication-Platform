@@ -63,6 +63,7 @@ services:
     depends_on:
       - hk-mysql
       - java_soap_web_service
+      - python_soap_web_service
 
   python_soap_web_service:
     restart: always
@@ -72,7 +73,7 @@ services:
       - ./soap_web_services:/code
     expose:
       - "8000"
-    command: /bin/bash -c "sleep 7; python manage.py runserver 0.0.0.0:8000"
+    command: /bin/bash -c "python check_db.py --service-name mysql --ip hk-mysql --port 3306"
     depends_on:
       - hk-mysql
       - java_soap_web_service
