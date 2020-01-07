@@ -62,8 +62,7 @@ class MedicationPlanForm extends React.Component {
         const {patientSelected, drugsSelected} = this.state;
         const {startDate, endDate, intakeInterval} = this.state;
         const doctor = JSON.parse(localStorage.getItem(constants.loggedUser));
-
-
+        
         let startDateTimestamp = new Date(startDate).getTime();
         let endDateTimestamp = new Date(endDate).getTime();
 
@@ -95,6 +94,8 @@ class MedicationPlanForm extends React.Component {
                 }
             }
         }
+
+        return;
 
         const obj = {
             id: null,

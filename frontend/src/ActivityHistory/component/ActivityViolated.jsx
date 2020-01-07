@@ -40,8 +40,8 @@ class ActivityViolated extends React.Component {
                         </strong>
                     </h5>
 
-                    <strong>Start: {util.parseDateTimeToString(activity.start)}</strong> <br/>
-                    <strong>End: {util.parseDateTimeToString(activity.end)}</strong><br/>
+                    <strong>Start: {util.parseDateTimeToString(util.utcTimeStampToLocalTimestamp(activity.start))}</strong> <br/>
+                    <strong>End: {util.parseDateTimeToString(util.utcTimeStampToLocalTimestamp(activity.end))}</strong><br/>
                     <strong>Normal: {activity.normal ? "yes": "no"}</strong><br/>
                     <button onClick={this.labelActivity}>
                         Annotate as {activity.normal ? "not normal": "normal"}

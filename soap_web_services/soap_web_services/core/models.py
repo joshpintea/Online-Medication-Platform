@@ -34,7 +34,7 @@ class Activity(models.Model):
     end_date = models.DateTimeField(blank=True, null=True)
     start_date = models.DateTimeField(blank=True, null=True)
     patient = models.ForeignKey('Patient', models.DO_NOTHING, blank=True, null=True)
-    is_violated = models.NullBooleanField(db_column='isViolated')
+    is_violated = models.NullBooleanField(db_column='is_violated')
     is_normal = models.NullBooleanField(db_column='is_normal')
 
     class Meta:

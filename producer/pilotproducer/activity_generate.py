@@ -21,12 +21,22 @@ def generate_activity_interval():
     return start_activity, end_activity
 
 
+def date_to_utc(date):
+    ts = date.timestamp()
+    utc_offset = datetime.datetime.fromtimestamp(ts) - datetime.datetime.utcfromtimestamp(ts)
+
+    minutes = utc_offset / datetime.timedelta(minutes=1)
+
+    return date - datetime.timedelta(minutes=minutes)
+
+
 def generate_activity(last_activity: str):
     activities = ["Leaving", "Toileting", "Showering", "Sleeping", "Breakfast",
                   "Lunch", "Dinner", "Snack", "Spare_Time/TV", "Grooming"]
 
     activity_label = random.choice([activity for activity in activities if not activity == last_activity])
     start_activity, end_activity = generate_activity_interval()
+
     patients = get_all_patients()
 
     if len(patients) == 0:
@@ -38,8 +48,8 @@ def generate_activity(last_activity: str):
     return {
         'patient_id': patient_id,
         'activity': activity_label,
-        'start': int(datetime.datetime.timestamp(start_activity) * 1000),
-        'end': int(datetime.datetime.timestamp(end_activity) * 1000)
+        'start': int(datetime.datetime.timestamp(date_to_utc(start_activity)) * 1000),
+        'end': int(datetime.datetime.timestamp(date_to_utc(end_activity)) * 1000)
     }, activity_label
 
 

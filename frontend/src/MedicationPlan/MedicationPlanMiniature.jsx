@@ -29,8 +29,8 @@ class MedicationPlanMiniature extends React.Component {
             <div className="card">
                 <div className="card-body">
                      <strong>Doctor: </strong> {medicationPlan.doctorDto.name} <br/>
-                     <strong>Start date: </strong> {util.parseDateToString(medicationPlan.startDate)} <br/>
-                     <strong>End date: </strong> {util.parseDateToString(medicationPlan.endDate)} <br/>
+                     <strong>Start date: </strong> {util.parseDateToString(util.utcTimeStampToLocalTimestamp(medicationPlan.startDate))} <br/>
+                     <strong>End date: </strong> {util.parseDateToString(util.utcTimeStampToLocalTimestamp(medicationPlan.endDate))} <br/>
                      <strong>Intake interval: </strong> {medicationPlan.intakeInterval} <br/>
                      <strong>Drugs: </strong>
                         <ul>

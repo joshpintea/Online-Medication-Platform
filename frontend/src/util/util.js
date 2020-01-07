@@ -1,10 +1,12 @@
+import {pipelinePrimaryTopicReference} from "@babel/types";
 
 
 export const util = {
     objectIsEmpty,
     parseDateToString,
     leftPad,
-    parseDateTimeToString
+    parseDateTimeToString,
+    utcTimeStampToLocalTimestamp
 };
 
 function objectIsEmpty(obj) {
@@ -33,4 +35,17 @@ function leftPad(num, size) {
     let s = num + "";
     while (s.length < size) s = "0" + s;
     return s;
+}
+
+
+function utcTimeStampToLocalTimestamp(timestamp) {
+    const date = new Date(timestamp);
+
+    var offset = date.getTimezoneOffset();
+
+    var localDate = new Date(timestamp);
+    localDate.setTime(date.getTime() + (offset * 60 * 1000))
+
+    console.log(timestamp, date, localDate);
+    return date.getTime()
 }
