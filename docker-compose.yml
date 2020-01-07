@@ -82,7 +82,7 @@ services:
     build: ./frontend
     working_dir: /app
     ports:
-      - "3001:3000" # Forward the exposed port 80 on the container to port 80 on the host machine
+      - "3000:3000" # Forward the exposed port 80 on the container to port 80 on the host machine
     restart: always
     volumes:
       - /app/node_modules

@@ -35,12 +35,6 @@ public class ObjectFactory {
     private final static QName _MedicationPlanIntervalModelArray_QNAME = new QName("soap_web_services.core.views", "MedicationPlanIntervalModelArray");
     private final static QName _ActivityModelArray_QNAME = new QName("soap_web_services.core.views", "ActivityModelArray");
     private final static QName _MedicationPlanIntervalModel_QNAME = new QName("soap_web_services.core.views", "MedicationPlanIntervalModel");
-    private final static QName _MedicationPlanIntervalModelIntakeIntervalStart_QNAME = new QName("soap_web_services.core.views", "intake_interval_start");
-    private final static QName _MedicationPlanIntervalModelDay_QNAME = new QName("soap_web_services.core.views", "day");
-    private final static QName _MedicationPlanIntervalModelMedicationPlanId_QNAME = new QName("soap_web_services.core.views", "medication_plan_id");
-    private final static QName _MedicationPlanIntervalModelIntakeIntervalEnd_QNAME = new QName("soap_web_services.core.views", "intake_interval_end");
-    private final static QName _MedicationPlanIntervalModelTakenOnTime_QNAME = new QName("soap_web_services.core.views", "taken_on_time");
-    private final static QName _MedicationPlanIntervalModelHour_QNAME = new QName("soap_web_services.core.views", "hour");
     private final static QName _MedicationPlanModelStartDate_QNAME = new QName("soap_web_services.core.views", "start_date");
     private final static QName _MedicationPlanModelIntakeIntervalPeriod_QNAME = new QName("soap_web_services.core.views", "intake_interval_period");
     private final static QName _MedicationPlanModelDoctorId_QNAME = new QName("soap_web_services.core.views", "doctor_id");
@@ -48,6 +42,12 @@ public class ObjectFactory {
     private final static QName _MedicationPlanModelPatientId_QNAME = new QName("soap_web_services.core.views", "patient_id");
     private final static QName _MedicationPlanNotObeyedMedicationPlan_QNAME = new QName("soap_web_services.core.views", "medication_plan");
     private final static QName _MedicationPlanNotObeyedIntakeIntervals_QNAME = new QName("soap_web_services.core.views", "intake_intervals");
+    private final static QName _MedicationPlanIntervalModelIntakeIntervalStart_QNAME = new QName("soap_web_services.core.views", "intake_interval_start");
+    private final static QName _MedicationPlanIntervalModelDay_QNAME = new QName("soap_web_services.core.views", "day");
+    private final static QName _MedicationPlanIntervalModelMedicationPlanId_QNAME = new QName("soap_web_services.core.views", "medication_plan_id");
+    private final static QName _MedicationPlanIntervalModelIntakeIntervalEnd_QNAME = new QName("soap_web_services.core.views", "intake_interval_end");
+    private final static QName _MedicationPlanIntervalModelTakenOnTime_QNAME = new QName("soap_web_services.core.views", "taken_on_time");
+    private final static QName _MedicationPlanIntervalModelHour_QNAME = new QName("soap_web_services.core.views", "hour");
     private final static QName _ActivityModelActivityLavel_QNAME = new QName("soap_web_services.core.views", "activity_lavel");
     private final static QName _ActivityModelIsNormal_QNAME = new QName("soap_web_services.core.views", "is_normal");
     private final static QName _ActivityModelIsViolated_QNAME = new QName("soap_web_services.core.views", "is_violated");
@@ -179,60 +179,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "soap_web_services.core.views", name = "intake_interval_start", scope = MedicationPlanIntervalModel.class)
-    public JAXBElement<BigInteger> createMedicationPlanIntervalModelIntakeIntervalStart(BigInteger value) {
-        return new JAXBElement<BigInteger>(_MedicationPlanIntervalModelIntakeIntervalStart_QNAME, BigInteger.class, MedicationPlanIntervalModel.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "soap_web_services.core.views", name = "day", scope = MedicationPlanIntervalModel.class)
-    public JAXBElement<XMLGregorianCalendar> createMedicationPlanIntervalModelDay(XMLGregorianCalendar value) {
-        return new JAXBElement<XMLGregorianCalendar>(_MedicationPlanIntervalModelDay_QNAME, XMLGregorianCalendar.class, MedicationPlanIntervalModel.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "soap_web_services.core.views", name = "medication_plan_id", scope = MedicationPlanIntervalModel.class)
-    public JAXBElement<Long> createMedicationPlanIntervalModelMedicationPlanId(Long value) {
-        return new JAXBElement<Long>(_MedicationPlanIntervalModelMedicationPlanId_QNAME, Long.class, MedicationPlanIntervalModel.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "soap_web_services.core.views", name = "intake_interval_end", scope = MedicationPlanIntervalModel.class)
-    public JAXBElement<BigInteger> createMedicationPlanIntervalModelIntakeIntervalEnd(BigInteger value) {
-        return new JAXBElement<BigInteger>(_MedicationPlanIntervalModelIntakeIntervalEnd_QNAME, BigInteger.class, MedicationPlanIntervalModel.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "soap_web_services.core.views", name = "taken_on_time", scope = MedicationPlanIntervalModel.class)
-    public JAXBElement<Boolean> createMedicationPlanIntervalModelTakenOnTime(Boolean value) {
-        return new JAXBElement<Boolean>(_MedicationPlanIntervalModelTakenOnTime_QNAME, Boolean.class, MedicationPlanIntervalModel.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "soap_web_services.core.views", name = "hour", scope = MedicationPlanIntervalModel.class)
-    public JAXBElement<BigInteger> createMedicationPlanIntervalModelHour(BigInteger value) {
-        return new JAXBElement<BigInteger>(_MedicationPlanIntervalModelHour_QNAME, BigInteger.class, MedicationPlanIntervalModel.class, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}}
      * 
      */
@@ -293,6 +239,60 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "soap_web_services.core.views", name = "intake_intervals", scope = MedicationPlanNotObeyed.class)
     public JAXBElement<MedicationPlanIntervalModelArray> createMedicationPlanNotObeyedIntakeIntervals(MedicationPlanIntervalModelArray value) {
         return new JAXBElement<MedicationPlanIntervalModelArray>(_MedicationPlanNotObeyedIntakeIntervals_QNAME, MedicationPlanIntervalModelArray.class, MedicationPlanNotObeyed.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "soap_web_services.core.views", name = "intake_interval_start", scope = MedicationPlanIntervalModel.class)
+    public JAXBElement<BigInteger> createMedicationPlanIntervalModelIntakeIntervalStart(BigInteger value) {
+        return new JAXBElement<BigInteger>(_MedicationPlanIntervalModelIntakeIntervalStart_QNAME, BigInteger.class, MedicationPlanIntervalModel.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "soap_web_services.core.views", name = "day", scope = MedicationPlanIntervalModel.class)
+    public JAXBElement<XMLGregorianCalendar> createMedicationPlanIntervalModelDay(XMLGregorianCalendar value) {
+        return new JAXBElement<XMLGregorianCalendar>(_MedicationPlanIntervalModelDay_QNAME, XMLGregorianCalendar.class, MedicationPlanIntervalModel.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "soap_web_services.core.views", name = "medication_plan_id", scope = MedicationPlanIntervalModel.class)
+    public JAXBElement<Long> createMedicationPlanIntervalModelMedicationPlanId(Long value) {
+        return new JAXBElement<Long>(_MedicationPlanIntervalModelMedicationPlanId_QNAME, Long.class, MedicationPlanIntervalModel.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "soap_web_services.core.views", name = "intake_interval_end", scope = MedicationPlanIntervalModel.class)
+    public JAXBElement<BigInteger> createMedicationPlanIntervalModelIntakeIntervalEnd(BigInteger value) {
+        return new JAXBElement<BigInteger>(_MedicationPlanIntervalModelIntakeIntervalEnd_QNAME, BigInteger.class, MedicationPlanIntervalModel.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "soap_web_services.core.views", name = "taken_on_time", scope = MedicationPlanIntervalModel.class)
+    public JAXBElement<Boolean> createMedicationPlanIntervalModelTakenOnTime(Boolean value) {
+        return new JAXBElement<Boolean>(_MedicationPlanIntervalModelTakenOnTime_QNAME, Boolean.class, MedicationPlanIntervalModel.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "soap_web_services.core.views", name = "hour", scope = MedicationPlanIntervalModel.class)
+    public JAXBElement<BigInteger> createMedicationPlanIntervalModelHour(BigInteger value) {
+        return new JAXBElement<BigInteger>(_MedicationPlanIntervalModelHour_QNAME, BigInteger.class, MedicationPlanIntervalModel.class, value);
     }
 
     /**
