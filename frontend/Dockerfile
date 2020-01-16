@@ -15,4 +15,4 @@ RUN npm install react-scripts@3.0.1 -g --silent
 COPY . /app/
 
 # start app
-CMD ["HTTPS=true npm start"]
+CMD npm start

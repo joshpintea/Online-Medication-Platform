@@ -20,6 +20,7 @@ public class RMIConfig {
         exporter.setServiceInterface(serviceInterface);
         exporter.setService(implementation);
         exporter.setServiceName(serviceInterface.getSimpleName());
+        exporter.setRegistryHost("172.28.1.4");
         exporter.setRegistryPort(1099);
 
         return exporter;

@@ -24,7 +24,7 @@ def generate_activity_interval():
 def date_to_utc(date):
     ts = date.timestamp()
     utc_offset = datetime.datetime.fromtimestamp(ts) - datetime.datetime.utcfromtimestamp(ts)
-
+    print(utc_offset)
     minutes = utc_offset / datetime.timedelta(minutes=1)
 
     return date - datetime.timedelta(minutes=minutes)
@@ -38,6 +38,9 @@ def generate_activity(last_activity: str):
     start_activity, end_activity = generate_activity_interval()
 
     patients = get_all_patients()
+
+
+    print("initial date: {}, utc date: {}".format(start_activity, date_to_utc(start_activity)))
 
     if len(patients) == 0:
         print("No patient found")

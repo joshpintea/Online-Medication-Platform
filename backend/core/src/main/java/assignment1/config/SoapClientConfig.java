@@ -22,7 +22,7 @@ public class SoapClientConfig {
     @Bean
     public DoctorSoapService caregiverClient(Jaxb2Marshaller marshaller) {
         DoctorSoapService doctorSoapService = new DoctorSoapService();
-        doctorSoapService.setDefaultUri("http://localhost:8000/doctor_wsdl/");
+        doctorSoapService.setDefaultUri("http://172.28.1.5:8000/doctor_wsdl/");
         doctorSoapService.setMarshaller(marshaller);
         doctorSoapService.setUnmarshaller(marshaller);
         return doctorSoapService;

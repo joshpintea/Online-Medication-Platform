@@ -32,7 +32,7 @@ class CaregiverApp extends React.Component {
                 <BrowserRouter>
                     <Switch>
                         <Route exact path={constants.routes.app.caregiverBaseUrl} component={CaregiverPatientsPage}/>
-                        <Route exact path={constants.routes.app.activitiesViolated} component={CaregiverNotificationPage}/>
+                        <Route exact path={constants.routes.app.activitiesViolatedCaregiver} component={CaregiverNotificationPage}/>
                         <Route component={NotFoundPage}/>
                     </Switch>
                 </BrowserRouter>

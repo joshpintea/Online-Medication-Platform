@@ -25,7 +25,7 @@ SECRET_KEY = ')2t9s6r7a!vx=9n6k4)r79)wptv$9+0^9v4-32q7@4qxc!3po$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '172.28.1.5']
 
 
 # Application definition

@@ -11,7 +11,7 @@ public class RmiProxyConfig {
     @Bean
     RmiProxyFactoryBean service() {
         RmiProxyFactoryBean rmiProxyFactory = new RmiProxyFactoryBean();
-        rmiProxyFactory.setServiceUrl("rmi://localhost:1099/PillDispenserService");
+        rmiProxyFactory.setServiceUrl("rmi://172.28.1.4:1099/PillDispenserService");
         rmiProxyFactory.setServiceInterface(PillDispenserService.class);
         return rmiProxyFactory;
     }
