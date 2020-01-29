@@ -1,7 +1,7 @@
 # Installation
 Clone or download the project.
 
-Make sure if you have mysql installed on your machine, if you dont have it, you can download from here https://www.mysql.com/downloads/
+Make sure that you have mysql installed on your machine, if you dont have it, you can download from here https://www.mysql.com/downloads/
 
 Download and install Node.js from nodejs.org/en/download/
 
